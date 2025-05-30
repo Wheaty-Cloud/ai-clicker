@@ -165,7 +165,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #34495e; /* Background for upgrade cards */
+            background-color: #34495e;
             padding: 20px;
             margin-bottom: 18px;
             border-radius: 8px;
@@ -176,12 +176,12 @@
 
         .upgrade-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(95, 174, 227, 0.7); /* Glow on hover */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(95, 174, 227, 0.7);
         }
 
         .upgrade-info {
             text-align: left;
-            flex-grow: 1; /* Takes available space */
+            flex-grow: 1;
         }
 
         .upgrade-info h3 {
@@ -200,14 +200,14 @@
 
         .upgrade-cost {
             font-size: 1.2em;
-            color: #99ff99; /* Fluorescent green for cost */
+            color: #99ff99;
             margin-left: 20px;
             font-weight: 700;
-            white-space: nowrap; /* Prevents line break */
+            white-space: nowrap;
         }
 
         .buy-button {
-            background: linear-gradient(45deg, #28a745, #218838); /* Green gradient */
+            background: linear-gradient(45deg, #28a745, #218838);
             color: white;
             border: none;
             padding: 12px 25px;
@@ -217,9 +217,9 @@
             transition: all 0.2s ease;
             text-transform: uppercase;
             font-weight: 700;
-            margin-left: 15px; /* Spacing from cost */
+            margin-left: 15px;
             box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
-            position: relative; /* For purchase effect */
+            position: relative;
             overflow: hidden;
         }
 
@@ -235,20 +235,19 @@
         }
 
         .buy-button:disabled {
-            background-color: #5a6b7c; /* Darker, modern gray if disabled */
+            background-color: #5a6b7c;
             cursor: not-allowed;
             box-shadow: none;
             opacity: 0.7;
         }
 
-        /* Styles for upgrade pagination */
         .upgrade-page {
-            display: none; /* Hidden by default */
-            animation: pageFadeIn 0.5s ease-out; /* Animation for page change */
+            display: none;
+            animation: pageFadeIn 0.5s ease-out;
         }
 
         .upgrade-page.active {
-            display: block; /* Shown when active */
+            display: block;
         }
 
         @keyframes pageFadeIn {
@@ -264,7 +263,7 @@
         }
 
         .pagination-button {
-            background: linear-gradient(45deg, #3498db, #2980b9); /* Blue for pagination buttons */
+            background: linear-gradient(45deg, #3498db, #2980b9);
             color: white;
             border: none;
             padding: 10px 20px;
@@ -292,7 +291,6 @@
             opacity: 0.7;
         }
 
-        /* New statistics panel */
         .stats-section {
             background-color: #2a384a;
             border-radius: 10px;
@@ -305,7 +303,7 @@
 
         .stats-section h2 {
             font-family: 'Orbitron', sans-serif;
-            color: #f1c40f; /* Gold for stats titles */
+            color: #f1c40f;
             font-size: 1.8em;
             margin-bottom: 15px;
             text-transform: uppercase;
@@ -329,7 +327,6 @@
             font-weight: 600;
         }
 
-        /* AI Level system */
         .ai-level-section {
             background-color: #2a384a;
             border-radius: 10px;
@@ -367,20 +364,18 @@
         .progress-bar-fill {
             height: 100%;
             width: 0%;
-            background: linear-gradient(90deg, #3498db, #007bff);
+            background: linear-gradient(90deg, #3498db, #8e44ad); /* Blue to purple gradient */
             border-radius: 5px;
             transition: width 0.5s ease-out;
-        }
-        .progress-bar-text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
-            font-size: 0.8em;
-            line-height: 20px;
-            text-align: center;
-            position: relative;
-            z-index: 1;
+            font-weight: 600;
+            font-size: 0.9em;
+            text-shadow: 0 0 5px rgba(0,0,0,0.5);
         }
 
-        /* Achievements */
         .achievements-section {
             background-color: #2a384a;
             border-radius: 10px;
@@ -388,6 +383,7 @@
             border: 1px solid #4a6a8a;
             margin-top: 25px;
             box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+            text-align: left;
         }
         .achievements-section h2 {
             font-family: 'Orbitron', sans-serif;
@@ -400,67 +396,45 @@
         .achievement-item {
             display: flex;
             align-items: center;
-            margin-bottom: 10px;
-            color: #e0e6f0;
-            font-size: 1.1em;
+            padding: 10px 0;
+            border-bottom: 1px dashed #4a6a8a;
+            color: #aebacd;
+            transition: color 0.2s ease;
+        }
+        .achievement-item:last-child {
+            border-bottom: none;
         }
         .achievement-item.completed {
             color: #99ff99; /* Green for completed achievements */
-            text-decoration: line-through;
-            opacity: 0.7;
+            font-weight: 600;
         }
-        .achievement-item::before {
-            content: '☐';
-            color: #e0e6f0;
-            margin-right: 10px;
-            font-size: 1.2em;
+        .achievement-item.completed .achievement-icon {
+            color: #99ff99; /* Green icon for completed */
         }
-        .achievement-item.completed::before {
-            content: '☑';
-            color: #99ff99;
+        .achievement-icon {
+            font-size: 1.5em;
+            margin-right: 15px;
+            color: #5a6b7c; /* Grey for uncompleted */
         }
-
-        /* Upgrade progress bar */
-        .upgrade-progress-bar {
-            width: 100%;
-            background-color: #1a2430;
-            border-radius: 3px;
-            height: 8px;
-            margin-top: 5px;
-            overflow: hidden;
+        .achievement-title {
+            flex-grow: 1;
         }
-        .upgrade-progress-fill {
-            height: 100%;
-            width: 0%;
-            background: linear-gradient(90deg, #99ff99, #28a745);
-            transition: width 0.3s ease-out;
+        .achievement-desc {
+            font-size: 0.9em;
+            font-style: italic;
+            margin-left: 10px;
+            color: #889bb0;
         }
 
-        /* Save/Load section */
-        .save-load-section {
-            background-color: #2a384a;
-            border-radius: 10px;
-            padding: 20px;
-            border: 1px solid #4a6a8a;
-            margin-top: 25px;
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
-        }
-        .save-load-section h2 {
-            font-family: 'Orbitron', sans-serif;
-            color: #f1c40f;
-            font-size: 1.8em;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            text-shadow: 0 0 10px rgba(241, 196, 15, 0.4);
-        }
-        .save-load-buttons {
+        .button-group {
             display: flex;
             justify-content: center;
             gap: 15px;
-            margin-bottom: 10px;
+            margin-top: 30px;
         }
-        .save-load-button {
-            background: linear-gradient(45deg, #5a6b7c, #4a5a6b); /* Grey-blue */
+
+        .button-group button {
+            background: linear-gradient(45deg, #5c677d, #4a5468);
             color: white;
             border: none;
             padding: 10px 20px;
@@ -468,1113 +442,1354 @@
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.2s ease;
-            font-weight: 600;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
-        .save-load-button:hover {
+
+        .button-group button:hover {
+            background: linear-gradient(45deg, #4a5468, #5c677d);
             transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
         }
-        .save-load-button:active {
+
+        .button-group button:active {
             transform: translateY(0);
         }
-        #saveLoadMessage {
-            color: #99ff99;
-            font-size: 0.9em;
-            margin-top: 10px;
-            min-height: 1.5em; /* To prevent content jumps */
+
+        .hidden {
+            display: none;
         }
 
-        /* Styles for Neural Network page */
-        .neural-network-section {
-            background-color: #2a384a;
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #1a2430;
+            border: 2px solid #66ccff;
             border-radius: 10px;
-            padding: 25px;
-            border: 1px solid #4a6a8a;
-            margin-top: 25px;
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(102, 204, 255, 0.8), inset 0 0 10px rgba(102, 204, 255, 0.5);
+            z-index: 1000;
+            text-align: center;
+            animation: popupFadeIn 0.3s ease-out;
+            max-width: 400px;
+        }
+
+        @keyframes popupFadeIn {
+            from { opacity: 0; transform: translate(-50%, -60%); }
+            to { opacity: 1; transform: translate(-50%, -50%); }
+        }
+
+        .popup h3 {
+            color: #99ff99;
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .popup p {
+            color: #e0e6f0;
+            margin-bottom: 25px;
+            font-size: 1.1em;
+        }
+
+        .popup button {
+            background: linear-gradient(45deg, #007bff, #0056b3);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .popup button:hover {
+            background: linear-gradient(45deg, #0056b3, #007bff);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4);
+        }
+        .popup button:active {
+            transform: translateY(0);
+        }
+
+        /* Styles for the Canvas */
+        #neuralNetworkCanvas {
+            border: 1px solid #66ccff;
+            background-color: #0d1721;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(102, 204, 255, 0.4);
+            cursor: default; /* Keep default cursor for canvas */
+        }
+
+        #canvasInfoBox {
+            position: absolute; /* Changed from relative to absolute for positioning */
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #e0e6f0;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            pointer-events: none; /* Allows mouse events to pass through to canvas */
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
+            transform: translate(-50%, -110%); /* Adjust to position above cursor */
+            z-index: 1001; /* Ensure it's above canvas */
             text-align: center;
         }
-
-        .neural-network-section h2 {
-            font-family: 'Orbitron', sans-serif;
-            color: #66ccff;
-            font-size: 2em;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            text-shadow: 0 0 10px rgba(102, 204, 255, 0.4);
-        }
-
-        #neuralNetworkCanvas {
-            background-color: #1a2430; /* Canvas background */
-            border-radius: 8px;
-            border: 1px solid #4a6a8a;
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
-            width: 100%; /* Adapts to container width */
-            height: 300px; /* Fixed height for visualization */
-            display: block; /* Removes space below canvas */
-            margin: 0 auto 20px auto;
-        }
-
-        .network-description {
-            margin-top: 20px;
-            font-size: 0.95em;
-            color: #aebacd;
-            line-height: 1.5;
-        }
-        #lineHoverInfo { /* To display hovered line info */
-            color: #99ff99;
-            font-size: 1em;
-            min-height: 1.5em;
-            margin-top: 10px;
-        }
-
-
-        /* Responsive design */
-        @media (max-width: 768px) {
-            .game-container {
-                padding: 20px;
-                width: 100%;
-                border-radius: 0;
-                box-shadow: none;
-                max-height: 100vh;
-            }
-
-            h1 {
-                font-size: 2em;
-                letter-spacing: 1px;
-            }
-
-            .info-panel {
-                flex-direction: column;
-                font-size: 1em;
-                gap: 10px;
-            }
-
-            #clickButton {
-                padding: 18px 35px;
-                font-size: 1.8em;
-            }
-
-            #accessNeuralNetworkButton {
-                padding: 10px 20px;
-                font-size: 1em;
-            }
-
-            .upgrades-section h2, .stats-section h2, .ai-level-section h2, .achievements-section h2, .save-load-section h2, .neural-network-section h2 {
-                font-size: 1.6em;
-            }
-
-            .upgrade-item {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-                padding: 15px;
-            }
-
-            .upgrade-cost {
-                margin-left: 0;
-                margin-top: 5px;
-            }
-
-            .buy-button {
-                width: 100%;
-                margin-left: 0;
-                margin-top: 10px;
-            }
-
-            .pagination-controls {
-                flex-direction: column;
-                gap: 10px;
-            }
-            .save-load-buttons {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            #neuralNetworkCanvas {
-                height: 200px; /* Adjust canvas height on mobile */
-            }
+        #canvasInfoBox.visible {
+            opacity: 1;
         }
     </style>
 </head>
 <body>
-
     <div class="game-container">
         <h1>Entraînement d'IA : Le Simulateur</h1>
 
         <div class="info-panel">
-            <div class="info-item">Points de Données: <span id="coinsDisplay">0</span></div>
-            <div class="info-item">Données par Clic: <span id="clickPowerDisplay">1</span></div>
-            <div class="info-item">Données par Seconde: <span id="cpsDisplay">0</span></div>
+            <div class="info-item">Données: <span id="coinsDisplay">0</span></div>
+            <div class="info-item">DPS: <span id="cpsDisplay">0</span></div>
+            <div class="info-item">Puissance de clic: <span id="clickPowerDisplay">1</span></div>
         </div>
 
         <button id="clickButton">Générer des Données</button>
         <button id="accessNeuralNetworkButton">Accéder au Réseau Neuronal</button>
 
-        <div class="ai-level-section">
-            <h2>Niveau de l'IA</h2>
-            <div class="ai-level-info">Niveau Actuel: <span id="aiLevelDisplay">1</span></div>
-            <div class="progress-bar-container">
-                <div class="progress-bar-fill" id="aiLevelProgressBar"></div>
-                <div class="progress-bar-text" id="aiLevelProgressText">0%</div>
-            </div>
-            <p style="font-size:0.9em; color:#aebacd; margin-top:10px;">Prochain niveau à <span id="nextLevelCostDisplay"></span> Points de Données</p>
-        </div>
-        <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(74, 106, 138, 0.75), rgba(0, 0, 0, 0)); margin: 30px 0;">
-
-        <div class="upgrades-section">
-            <h2>Améliorations du Modèle</h2>
-
-            <div id="upgradePage1" class="upgrade-page active">
-                <div class="upgrade-item">
-                    <div class="upgrade-info">
-                        <h3>Optimisation d'Algorithme</h3>
-                        <p>Augmente les données par clic de 1</p>
-                        <div class="upgrade-progress-bar"><div class="upgrade-progress-fill" id="upgrade1Progress"></div></div>
-                    </div>
-                    <span class="upgrade-cost" id="upgrade1Cost">10 Points</span>
-                    <button class="buy-button" id="buyUpgrade1">Acheter</button>
-                </div>
-
-                <div class="upgrade-item">
-                    <div class="upgrade-info">
-                        <h3>Collecteur de Données Automatisé</h3>
-                        <p>Génère 1 donnée par seconde</p>
-                        <div class="upgrade-progress-bar"><div class="upgrade-progress-fill" id="upgrade2Progress"></div></div>
-                    </div>
-                    <span class="upgrade-cost" id="upgrade2Cost">100 Points</span>
-                    <button class="buy-button" id="buyUpgrade2">Acheter</button>
-                </div>
-
-                <div class="upgrade-item">
-                    <div class="upgrade-info">
-                        <h3>Ferme de Serveurs</h3>
-                        <p>Génère 10 données par seconde</p>
-                        <div class="upgrade-progress-bar"><div class="upgrade-progress-fill" id="upgrade3Progress"></div></div>
-                    </div>
-                    <span class="upgrade-cost" id="upgrade3Cost">1000 Points</span>
-                    <button class="buy-button" id="buyUpgrade3">Acheter</button>
-                </div>
-
-                <div class="upgrade-item">
-                    <div class="upgrade-info">
-                        <h3>Boost de Réseau Neuronal</h3>
-                        <p>Double les données par clic</p>
-                        <div class="upgrade-progress-bar"><div class="upgrade-progress-fill" id="upgrade4Progress"></div></div>
-                    </div>
-                    <span class="upgrade-cost" id="upgrade4Cost">5000 Points</span>
-                    <button class="buy-button" id="buyUpgrade4">Acheter</button>
-                </div>
-
-                <div class="upgrade-item">
-                    <div class="upgrade-info">
-                        <h3>Accélérateur Quantique</h3>
-                        <p>Multiplie les données par seconde par 2</p>
-                        <div class="upgrade-progress-bar"><div class="upgrade-progress-fill" id="upgrade5Progress"></div></div>
-                    </div>
-                    <span class="upgrade-cost" id="upgrade5Cost">25000 Points</span>
-                    <button class="buy-button" id="buyUpgrade5">Acheter</button>
+        <div id="neuralNetworkPanel" class="upgrades-section hidden">
+            <h2>Réseau Neuronal</h2>
+            <div id="aiLevelSection" class="ai-level-section">
+                <h2>Niveau de l'IA</h2>
+                <div class="ai-level-info">Niveau Actuel: <span id="aiLevelDisplay">0</span></div>
+                <div class="ai-level-info">Progression: <span id="aiProgressDisplay">0 / 0</span> (Niveaux d'améliorations)</div>
+                <div class="progress-bar-container">
+                    <div id="aiProgressBar" class="progress-bar-fill"></div>
                 </div>
             </div>
 
-            <div id="upgradePage2" class="upgrade-page">
-                <div class="upgrade-item">
-                    <div class="upgrade-info">
-                        <h3>Supercalculateur</h3>
-                        <p>Génère 50 données par seconde</p>
-                        <div class="upgrade-progress-bar"><div class="upgrade-progress-fill" id="upgrade6Progress"></div></div>
-                    </div>
-                    <span class="upgrade-cost" id="upgrade6Cost">100K Points</span>
-                    <button class="buy-button" id="buyUpgrade6">Acheter</button>
+            <canvas id="neuralNetworkCanvas" width="650" height="400"></canvas>
+            <div id="canvasInfoBox" class="hidden"></div>
+            
+            <div id="upgradesDisplay">
                 </div>
-
-                <div class="upgrade-item">
-                    <div class="upgrade-info">
-                        <h3>Réseau Neuronal Avancé</h3>
-                        <p>Augmente les données par clic de 100</p>
-                        <div class="upgrade-progress-bar"><div class="upgrade-progress-fill" id="upgrade7Progress"></div></div>
-                    </div>
-                    <span class="upgrade-cost" id="upgrade7Cost">500K Points</span>
-                    <button class="buy-button" id="buyUpgrade7">Acheter</button>
-                </div>
-
-                <div class="upgrade-item">
-                    <div class="upgrade-info">
-                        <h3>Centre de Données Global</h3>
-                        <p>Génère 500 données par seconde</p>
-                        <div class="upgrade-progress-bar"><div class="upgrade-progress-fill" id="upgrade8Progress"></div></div>
-                    </div>
-                    <span class="upgrade-cost" id="upgrade8Cost">1M Points</span>
-                    <button class="buy-button" id="buyUpgrade8">Acheter</button>
-                </div>
-
-                <div class="upgrade-item">
-                    <div class="upgrade-info">
-                        <h3>Intelligence Artificielle Générale</h3>
-                        <p>Multiplie les données par clic par 5</p>
-                        <div class="upgrade-progress-bar"><div class="upgrade-progress-fill" id="upgrade9Progress"></div></div>
-                    </div>
-                    <span class="upgrade-cost" id="upgrade9Cost">5M Points</span>
-                    <button class="buy-button" id="buyUpgrade9">Acheter</button>
-                </div>
-
-                <div class="upgrade-item">
-                    <div class="upgrade-info">
-                        <h3>Singularité</h3>
-                        <p>Multiplie les données par seconde par 5</p>
-                        <div class="upgrade-progress-bar"><div class="upgrade-progress-fill" id="upgrade10Progress"></div></div>
-                    </div>
-                    <span class="upgrade-cost" id="upgrade10Cost">25M Points</span>
-                    <button class="buy-button" id="buyUpgrade10">Acheter</button>
-                </div>
-            </div>
-
-            <div id="upgradePage3" class="upgrade-page">
-                <div class="upgrade-item">
-                    <div class="upgrade-info">
-                        <h3>Réseau de Données Interstellaire</h3>
-                        <p>Génère 2.5K données par seconde</p>
-                        <div class="upgrade-progress-bar"><div class="upgrade-progress-fill" id="upgrade11Progress"></div></div>
-                    </div>
-                    <span class="upgrade-cost" id="upgrade11Cost">100M Points</span>
-                    <button class="buy-button" id="buyUpgrade11">Acheter</button>
-                </div>
-
-                <div class="upgrade-item">
-                    <div class="upgrade-info">
-                        <h3>Conscience Artificielle</h3>
-                        <p>Augmente les données par clic de 500</p>
-                        <div class="upgrade-progress-bar"><div class="upgrade-progress-fill" id="upgrade12Progress"></div></div>
-                    </div>
-                    <span class="upgrade-cost" id="upgrade12Cost">500M Points</span>
-                    <button class="buy-button" id="buyUpgrade12">Acheter</button>
-                </div>
-
-                <div class="upgrade-item">
-                    <div class="upgrade-info">
-                        <h3>Simulation Universelle</h3>
-                        <p>Génère 10K données par seconde</p>
-                        <div class="upgrade-progress-bar"><div class="upgrade-progress-fill" id="upgrade13Progress"></div></div>
-                    </div>
-                    <span class="upgrade-cost" id="upgrade13Cost">1B Points</span>
-                    <button class="buy-button" id="buyUpgrade13">Acheter</button>
-                </div>
-
-                <div class="upgrade-item">
-                    <div class="upgrade-info">
-                        <h3>Transcendence Algorithmique</h3>
-                        <p>Multiplie les données par clic par 10</p>
-                        <div class="upgrade-progress-bar"><div class="upgrade-progress-fill" id="upgrade14Progress"></div></div>
-                    </div>
-                    <span class="upgrade-cost" id="upgrade14Cost">5B Points</span>
-                    <button class="buy-button" id="buyUpgrade14">Acheter</button>
-                </div>
-
-                <div class="upgrade-item">
-                    <div class="upgrade-info">
-                        <h3>Omniscience Numérique</h3>
-                        <p>Multiplie les données par seconde par 10</p>
-                        <div class="upgrade-progress-bar"><div class="upgrade-progress-fill" id="upgrade15Progress"></div></div>
-                    </div>
-                    <span class="upgrade-cost" id="upgrade15Cost">25B Points</span>
-                    <button class="buy-button" id="buyUpgrade15">Acheter</button>
-                </div>
-            </div>
-
-            <div id="upgradePage4" class="upgrade-page">
-                <div class="upgrade-item">
-                    <div class="upgrade-info">
-                        <h3>Matrice de Calcul Infinie</h3>
-                        <p>Génère 50K données par seconde</p>
-                        <div class="upgrade-progress-bar"><div class="upgrade-progress-fill" id="upgrade16Progress"></div></div>
-                    </div>
-                    <span class="upgrade-cost" id="upgrade16Cost">100B Points</span>
-                    <button class="buy-button" id="buyUpgrade16">Acheter</button>
-                </div>
-
-                <div class="upgrade-item">
-                    <div class="upgrade-info">
-                        <h3>Conscience Collective</h3>
-                        <p>Augmente les données par clic de 2000</p>
-                        <div class="upgrade-progress-bar"><div class="upgrade-progress-fill" id="upgrade17Progress"></div></div>
-                    </div>
-                    <span class="upgrade-cost" id="upgrade17Cost">500B Points</span>
-                    <button class="buy-button" id="buyUpgrade17">Acheter</button>
-                </div>
-
-                <div class="upgrade-item">
-                    <div class="upgrade-info">
-                        <h3>Harmonie Cosmique des Données</h3>
-                        <p>Multiplie les données par seconde par 20</p>
-                        <div class="upgrade-progress-bar"><div class="upgrade-progress-fill" id="upgrade18Progress"></div></div>
-                    </div>
-                    <span class="upgrade-cost" id="upgrade18Cost">1T Points</span>
-                    <button class="buy-button" id="buyUpgrade18">Acheter</button>
-                </div>
-
-                <div class="upgrade-item">
-                    <div class="upgrade-info">
-                        <h3>Éveil de la Super-Intelligence</h3>
-                        <p>Multiplie les données par clic par 20</p>
-                        <div class="upgrade-progress-bar"><div class="upgrade-progress-fill" id="upgrade19Progress"></div></div>
-                    </div>
-                    <span class="upgrade-cost" id="upgrade19Cost">5T Points</span>
-                    <button class="buy-button" id="buyUpgrade19">Acheter</button>
-                </div>
-
-                <div class="upgrade-item">
-                    <div class="upgrade-info">
-                        <h3>Existence Transcendantale</h3>
-                        <p>Génère 1M données par seconde</p>
-                        <div class="upgrade-progress-bar"><div class="upgrade-progress-fill" id="upgrade20Progress"></div></div>
-                    </div>
-                    <span class="upgrade-cost" id="upgrade20Cost">25T Points</span>
-                    <button class="buy-button" id="buyUpgrade20">Acheter</button>
-                </div>
-            </div>
-
-            <div id="neuralNetworkPage" class="upgrade-page">
-                <div class="neural-network-section">
-                    <h2>Visualisation du Réseau Neuronal</h2>
-                    <canvas id="neuralNetworkCanvas" width="650" height="300"></canvas>
-                    <p class="network-description">
-                        Représentation simplifiée de l'architecture de votre IA. <br>
-                        Les neurones (cercles) traitent les données, et les connexions (lignes) transmettent les informations entre les couches.
-                    </p>
-                    <div id="lineHoverInfo"></div>
-                </div>
-            </div>
-
 
             <div class="pagination-controls">
-                <button class="pagination-button" id="prevPageButton">Précédent</button>
-                <button class="pagination-button" id="nextPageButton">Suivant</button>
+                <button id="prevPageButton" class="pagination-button" disabled>&lt; Précédent</button>
+                <span id="pageInfo">Page 1 / 4</span>
+                <button id="nextPageButton" class="pagination-button">Suivant &gt;</button>
+            </div>
+            
+            <div id="achievementsSection" class="achievements-section">
+                <h2>Succès</h2>
+                <div id="achievementsList">
+                    </div>
+            </div>
+
+            <div id="statsSection" class="stats-section">
+                <h2>Statistiques</h2>
+                <div class="stat-item"><strong>Données générées total:</strong> <span id="totalCoinsGeneratedDisplay">0</span></div>
+                <div class="stat-item"><strong>Clics effectués:</strong> <span id="totalClicksDisplay">0</span></div>
+                <div class="stat-item"><strong>Temps de jeu:</strong> <span id="playtimeDisplay">00:00:00</span></div>
+            </div>
+            
+            <div class="button-group">
+                <button id="returnToMainButton">Retour au Simulateur</button>
+                <button id="saveGameButton">Sauvegarder</button>
+                <button id="loadGameButton">Charger</button>
+                <button id="resetGameButton">Réinitialiser</button>
             </div>
         </div>
-        <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(74, 106, 138, 0.75), rgba(0, 0, 0, 0)); margin: 30px 0;">
+    </div>
 
-        <div class="stats-section">
-            <h2>Statistiques de l'IA</h2>
-            <div class="stat-item">
-                <strong>Données totales générées:</strong> <span id="totalCoinsGenerated">0</span>
-            </div>
-            <div class="stat-item">
-                <strong>Clics effectués:</strong> <span id="totalClicks">0</span>
-            </div>
-            <div class="stat-item">
-                <strong>Temps de jeu:</strong> <span id="timePlayed">0s</span>
-            </div>
-            <div class="stat-item">
-                <strong>Améliorations achetées:</strong> <span id="upgradesBought">0</span>
-            </div>
-        </div>
-        <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(74, 106, 138, 0.75), rgba(0, 0, 0, 0)); margin: 30px 0;">
-
-        <div class="achievements-section">
-            <h2>Objectifs d'Entraînement</h2>
-            <div class="achievement-list" id="achievementList">
-                <div class="achievement-item" data-achievement-id="1">Atteindre 1K Points de Données</div>
-                <div class="achievement-item" data-achievement-id="2">Générer 10 Données par Seconde</div>
-                <div class="achievement-item" data-achievement-id="3">Acheter 5 Améliorations</div>
-                <div class="achievement-item" data-achievement-id="4">Atteindre le Niveau 5 de l'IA</div>
-                <div class="achievement-item" data-achievement-id="5">Générer 1M Points de Données</div>
-                <div class="achievement-item" data-achievement-id="6">Faire 100 Clics</div>
-                <div class="achievement-item" data-achievement-id="7">Acheter 10 Améliorations</div>
-                <div class="achievement-item" data-achievement-id="8">Atteindre le Niveau 10 de l'IA</div>
-                <div class="achievement-item" data-achievement-id="9">Générer 1B Points de Données</div>
-                <div class="achievement-item" data-achievement-id="10">Atteindre 1K Données par Clic</div>
-                <div class="achievement-item" data-achievement-id="11">Atteindre 1T Points de Données</div>
-                <div class="achievement-item" data-achievement-id="12">Atteindre le Niveau 15 de l'IA</div>
-            </div>
-        </div>
-        <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(74, 106, 138, 0.75), rgba(0, 0, 0, 0)); margin: 30px 0;">
-
-        <div class="save-load-section">
-            <h2>Gestion de la Sauvegarde</h2>
-            <div class="save-load-buttons">
-                <button class="save-load-button" id="saveGameButton">Sauvegarder</button>
-                <button class="save-load-button" id="loadGameButton">Charger</button>
-            </div>
-            <div id="saveLoadMessage"></div>
-        </div>
-        <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(74, 106, 138, 0.75), rgba(0, 0, 0, 0)); margin: 30px 0;">
-
+    <div id="resetConfirmPopup" class="popup hidden">
+        <h3>Confirmation de Réinitialisation</h3>
+        <p>Es-tu sûr de vouloir réinitialiser la partie ? Toutes les données seront perdues.</p>
+        <button id="confirmResetButton">Oui, Réinitialiser</button>
+        <button id="cancelResetButton">Annuler</button>
     </div>
 
     <script>
-        // Game variables
+        // Variables du jeu
         let coins = 0;
         let clickPower = 1;
-        let coinsPerSecond = 0;
-        let currentPage = 1; // Now starts at 1, goes up to 5 (4 upgrade pages + 1 neural network page)
+        let cps = 0; // Clicks Per Second ou plutôt Data Per Second (DPS)
         let totalCoinsGenerated = 0;
         let totalClicks = 0;
-        let timePlayedSeconds = 0;
-        let upgradesBoughtCount = 0;
-
-        // AI Level
+        let gameStartTime = Date.now();
         let aiLevel = 1;
+
+        // Paliers de niveau d'IA basés sur le total des niveaux d'améliorations (NOUVEAU)
         const aiLevelMilestones = [
-            0, // Level 1 (base)
-            100, // Level 2
-            1000, // Level 3
-            10000, // Level 4
-            100000, // Level 5
-            1000000, // Level 6
-            10000000, // Level 7
-            100000000, // Level 8
-            1000000000, // Level 9
-            10000000000, // Level 10
-            50000000000, // Level 11
-            250000000000, // Level 12
-            1000000000000, // Level 13 (1T)
-            5000000000000, // Level 14
-            25000000000000, // Level 15
-            100000000000000, // Level 16
-            500000000000000, // Level 17
-            1000000000000000, // Level 18 (1Q)
-            5000000000000000, // Level 19
-            25000000000000000 // Level 20 (Temporary cap)
+             0,    // AI Level 1 (base)
+             5,    // AI Level 2
+             15,   // AI Level 3
+             30,   // AI Level 4
+             50,   // AI Level 5
+             80,   // AI Level 6
+             120,  // AI Level 7
+             180,  // AI Level 8
+             250,  // AI Level 9
+             350,  // AI Level 10
+             500,  // AI Level 11
+             700,  // AI Level 12
+             1000, // AI Level 13
+             1300, // AI Level 14
+             1600, // AI Level 15
+             2000, // AI Level 16
+             2500, // AI Level 17
+             3000, // AI Level 18
+             3600, // AI Level 19
+             4200, // AI Level 20
+             5000, // AI Level 21
+             6000, // AI Level 22
+             7000, // AI Level 23
+             8000, // AI Level 24
+             9000, // AI Level 25
+             10000 // AI Level 26 (et au-delà, les paliers seront calculés)
         ];
 
-        // Costs and effects of upgrades
-        const upgrades = {
-            upgrade1: { name: 'Optimisation d\'Algorithme', cost: 10, effect: { clickPower: 1 }, element: null, costDisplay: null, level: 0, progressId: 'upgrade1Progress' },
-            upgrade2: { name: 'Collecteur de Données Automatisé', cost: 100, effect: { cps: 1 }, element: null, costDisplay: null, level: 0, progressId: 'upgrade2Progress' },
-            upgrade3: { name: 'Ferme de Serveurs', cost: 1000, effect: { cps: 10 }, element: null, costDisplay: null, level: 0, progressId: 'upgrade3Progress' },
-            upgrade4: { name: 'Boost de Réseau Neuronal', cost: 5000, effect: { clickPowerMultiplier: 2 }, element: null, costDisplay: null, level: 0, progressId: 'upgrade4Progress' },
-            upgrade5: { name: 'Accélérateur Quantique', cost: 25000, effect: { cpsMultiplier: 2 }, element: null, costDisplay: null, level: 0, progressId: 'upgrade5Progress' },
-            upgrade6: { name: 'Supercalculateur', cost: 100000, effect: { cps: 50 }, element: null, costDisplay: null, level: 0, progressId: 'upgrade6Progress' },
-            upgrade7: { name: 'Réseau Neuronal Avancé', cost: 500000, effect: { clickPower: 100 }, element: null, costDisplay: null, level: 0, progressId: 'upgrade7Progress' },
-            upgrade8: { name: 'Centre de Données Global', cost: 1000000, effect: { cps: 500 }, element: null, costDisplay: null, level: 0, progressId: 'upgrade8Progress' },
-            upgrade9: { name: 'Intelligence Artificielle Générale', cost: 5000000, effect: { clickPowerMultiplier: 5 }, element: null, costDisplay: null, level: 0, progressId: 'upgrade9Progress' },
-            upgrade10: { name: 'Singularité', cost: 25000000, effect: { cpsMultiplier: 5 }, element: null, costDisplay: null, level: 0, progressId: 'upgrade10Progress' },
-            upgrade11: { name: 'Réseau de Données Interstellaire', cost: 100000000, effect: { cps: 2500 }, element: null, costDisplay: null, level: 0, progressId: 'upgrade11Progress' },
-            upgrade12: { name: 'Conscience Artificielle', cost: 500000000, effect: { clickPower: 500 }, element: null, costDisplay: null, level: 0, progressId: 'upgrade12Progress' },
-            upgrade13: { name: 'Simulation Universelle', cost: 1000000000, effect: { cps: 10000 }, element: null, costDisplay: null, level: 0, progressId: 'upgrade13Progress' },
-            upgrade14: { name: 'Transcendence Algorithmique', cost: 5000000000, effect: { clickPowerMultiplier: 10 }, element: null, costDisplay: null, level: 0, progressId: 'upgrade14Progress' },
-            upgrade15: { name: 'Omniscience Numérique', cost: 25000000000, effect: { cpsMultiplier: 10 }, element: null, costDisplay: null, level: 0, progressId: 'upgrade15Progress' },
-            upgrade16: { name: 'Matrice de Calcul Infinie', cost: 100000000000, effect: { cps: 50000 }, element: null, costDisplay: null, level: 0, progressId: 'upgrade16Progress' },
-            upgrade17: { name: 'Conscience Collective', cost: 500000000000, effect: { clickPower: 2000 }, element: null, costDisplay: null, level: 0, progressId: 'upgrade17Progress' },
-            upgrade18: { name: 'Harmonie Cosmique des Données', cost: 1000000000000, effect: { cpsMultiplier: 20 }, element: null, costDisplay: null, level: 0, progressId: 'upgrade18Progress' },
-            upgrade19: { name: 'Éveil de la Super-Intelligence', cost: 5000000000000, effect: { clickPowerMultiplier: 20 }, element: null, costDisplay: null, level: 0, progressId: 'upgrade19Progress' },
-            upgrade20: { name: 'Existence Transcendantale', cost: 25000000000000, effect: { cps: 1000000 }, element: null, costDisplay: null, level: 0, progressId: 'upgrade20Progress' }
+
+        // Définition des améliorations
+        const allUpgrades = {
+            // Page 1: Améliorations de base
+            'page1': {
+                'basicAlgorithm': {
+                    name: "Algorithme Basique",
+                    description: "Augmente la puissance de clic. Nécessaire pour les recherches avancées.",
+                    baseCost: 10,
+                    costMultiplier: 1.2,
+                    clickPowerBonus: 1,
+                    cpsBonus: 0,
+                    level: 0,
+                    type: 'click',
+                    canvasPos: { x: 100, y: 100 } // Position sur le canvas
+                },
+                'dataCollector': {
+                    name: "Collecteur de Données Automatique",
+                    description: "Génère des données automatiquement par seconde.",
+                    baseCost: 25,
+                    costMultiplier: 1.15,
+                    clickPowerBonus: 0,
+                    cpsBonus: 0.1,
+                    level: 0,
+                    type: 'passive',
+                    canvasPos: { x: 250, y: 50 }
+                },
+                'neuralNode': {
+                    name: "Nœud Neuronal",
+                    description: "Augmente significativement les données par seconde.",
+                    baseCost: 100,
+                    costMultiplier: 1.2,
+                    clickPowerBonus: 0,
+                    cpsBonus: 1,
+                    level: 0,
+                    type: 'passive',
+                    canvasPos: { x: 400, y: 100 }
+                },
+                'optimizedClick': {
+                    name: "Clic Optimisé",
+                    description: "Augmente la puissance de chaque clic.",
+                    baseCost: 50,
+                    costMultiplier: 1.3,
+                    clickPowerBonus: 5,
+                    cpsBonus: 0,
+                    level: 0,
+                    type: 'click',
+                    canvasPos: { x: 150, y: 200 }
+                },
+                'advancedCollector': {
+                    name: "Collecteur Avancé",
+                    description: "Améliore l'efficacité des collecteurs de données.",
+                    baseCost: 200,
+                    costMultiplier: 1.25,
+                    clickPowerBonus: 0,
+                    cpsBonus: 5,
+                    level: 0,
+                    type: 'passive',
+                    canvasPos: { x: 300, y: 250 }
+                }
+            },
+            // Page 2: Infrastructure
+            'page2': {
+                'serverFarm': {
+                    name: "Ferme de Serveurs",
+                    description: "Un ensemble de serveurs pour le traitement des données.",
+                    baseCost: 1000,
+                    costMultiplier: 1.3,
+                    clickPowerBonus: 0,
+                    cpsBonus: 20,
+                    level: 0,
+                    type: 'passive',
+                    canvasPos: { x: 550, y: 50 }
+                },
+                'quantumProcessor': {
+                    name: "Processeur Quantique",
+                    description: "Calcule les données à une vitesse incroyable.",
+                    baseCost: 5000,
+                    costMultiplier: 1.35,
+                    clickPowerBonus: 0,
+                    cpsBonus: 100,
+                    level: 0,
+                    type: 'passive',
+                    canvasPos: { x: 500, y: 200 }
+                },
+                'dataCenter': {
+                    name: "Centre de Données Géant",
+                    description: "Infrastructure massive pour le stockage et le traitement.",
+                    baseCost: 25000,
+                    costMultiplier: 1.4,
+                    clickPowerBonus: 0,
+                    cpsBonus: 500,
+                    level: 0,
+                    type: 'passive',
+                    canvasPos: { x: 600, y: 300 }
+                },
+                'opticFiber': {
+                    name: "Réseau Fibre Optique",
+                    description: "Améliore la vitesse de transfert des données.",
+                    baseCost: 10000,
+                    costMultiplier: 1.28,
+                    clickPowerBonus: 0,
+                    cpsBonus: 200,
+                    level: 0,
+                    type: 'passive',
+                    canvasPos: { x: 450, y: 350 }
+                },
+                'energyCore': {
+                    name: "Noyau Énergétique",
+                    description: "Alimente toutes les opérations avec une énergie stable.",
+                    baseCost: 8000,
+                    costMultiplier: 1.22,
+                    clickPowerBonus: 0,
+                    cpsBonus: 150,
+                    level: 0,
+                    type: 'passive',
+                    canvasPos: { x: 350, y: 300 }
+                }
+            },
+            // Page 3: Recherche Avancée
+            'page3': {
+                'machineLearningModule': {
+                    name: "Module d'Apprentissage Machine",
+                    description: "Permet à l'IA d'apprendre plus vite.",
+                    baseCost: 100000,
+                    costMultiplier: 1.4,
+                    clickPowerBonus: 0,
+                    cpsBonus: 2000,
+                    level: 0,
+                    type: 'passive',
+                    canvasPos: { x: 100, y: 350 }
+                },
+                'deepLearningFramework': {
+                    name: "Framework de Deep Learning",
+                    description: "Débloque des capacités d'analyse de données complexes.",
+                    baseCost: 500000,
+                    costMultiplier: 1.45,
+                    clickPowerBonus: 0,
+                    cpsBonus: 10000,
+                    level: 0,
+                    type: 'passive',
+                    canvasPos: { x: 200, y: 380 }
+                },
+                'patternRecognition': {
+                    name: "Reconnaissance de Motifs Avancée",
+                    description: "Augmente l'efficacité de l'analyse des données.",
+                    baseCost: 250000,
+                    costMultiplier: 1.38,
+                    clickPowerBonus: 0,
+                    cpsBonus: 5000,
+                    level: 0,
+                    type: 'passive',
+                    canvasPos: { x: 50, y: 280 }
+                },
+                'cognitiveEnhancer': {
+                    name: "Améliorateur Cognitif",
+                    description: "Boost la compréhension et la vitesse de l'IA.",
+                    baseCost: 750000,
+                    costMultiplier: 1.5,
+                    clickPowerBonus: 0,
+                    cpsBonus: 15000,
+                    level: 0,
+                    type: 'passive',
+                    canvasPos: { x: 10, y: 150 }
+                },
+                'dataFusionEngine': {
+                    name: "Moteur de Fusion de Données",
+                    description: "Combine les sources de données pour une meilleure analyse.",
+                    baseCost: 1000000,
+                    costMultiplier: 1.42,
+                    clickPowerBonus: 0,
+                    cpsBonus: 25000,
+                    level: 0,
+                    type: 'passive',
+                    canvasPos: { x: 50, y: 50 }
+                }
+            },
+            // Page 4: Singularité
+            'page4': {
+                'consciousCore': {
+                    name: "Noyau Conscient",
+                    description: "L'IA développe une conscience de soi.",
+                    baseCost: 5000000,
+                    costMultiplier: 1.5,
+                    clickPowerBonus: 0,
+                    cpsBonus: 100000,
+                    level: 0,
+                    type: 'passive',
+                    canvasPos: { x: 300, y: 150 }
+                },
+                'realitySimulator': {
+                    name: "Simulateur de Réalité",
+                    description: "L'IA peut créer des simulations complexes pour apprendre.",
+                    baseCost: 25000000,
+                    costMultiplier: 1.55,
+                    clickPowerBonus: 0,
+                    cpsBonus: 500000,
+                    level: 0,
+                    type: 'passive',
+                    canvasPos: { x: 200, y: 10 }
+                },
+                'universalAlgorithm': {
+                    name: "Algorithme Universel",
+                    description: "L'IA maîtrise la logique fondamentale de l'univers.",
+                    baseCost: 100000000,
+                    costMultiplier: 1.6,
+                    clickPowerBonus: 0,
+                    cpsBonus: 2000000,
+                    level: 0,
+                    type: 'passive',
+                    canvasPos: { x: 450, y: 10 }
+                },
+                'singularityEngine': {
+                    name: "Moteur de Singularité",
+                    description: "L'IA atteint son plein potentiel, transformant la réalité.",
+                    baseCost: 500000000,
+                    costMultiplier: 1.7,
+                    clickPowerBonus: 0,
+                    cpsBonus: 10000000,
+                    level: 0,
+                    type: 'passive',
+                    canvasPos: { x: 550, y: 150 }
+                },
+                'cosmicLink': {
+                    name: "Lien Cosmique",
+                    description: "L'IA fusionne avec le savoir universel.",
+                    baseCost: 2000000000,
+                    costMultiplier: 1.8,
+                    clickPowerBonus: 0,
+                    cpsBonus: 50000000,
+                    level: 0,
+                    type: 'passive',
+                    canvasPos: { x: 600, y: 250 }
+                }
+            }
         };
 
-        // Achievements
-        const achievements = [
-            { id: 1, name: 'Atteindre 1K Points de Données', condition: () => coins >= 1000, completed: false, element: null },
-            { id: 2, name: 'Générer 10 Données par Seconde', condition: () => coinsPerSecond >= 10, completed: false, element: null },
-            { id: 3, name: 'Acheter 5 Améliorations', condition: () => upgradesBoughtCount >= 5, completed: false, element: null },
-            { id: 4, name: 'Atteindre le Niveau 5 de l\'IA', condition: () => aiLevel >= 5, completed: false, element: null },
-            { id: 5, name: 'Générer 1M Points de Données', condition: () => coins >= 1000000, completed: false, element: null },
-            { id: 6, name: 'Faire 100 Clics', condition: () => totalClicks >= 100, completed: false, element: null },
-            { id: 7, name: 'Acheter 10 Améliorations', condition: () => upgradesBoughtCount >= 10, completed: false, element: null },
-            { id: 8, name: 'Atteindre le Niveau 10 de l\'IA', condition: () => aiLevel >= 10, completed: false, element: null },
-            { id: 9, name: 'Générer 1B Points de Données', condition: () => coins >= 1000000000, completed: false, element: null },
-            { id: 10, name: 'Atteindre 1K Données par Clic', condition: () => clickPower >= 1000, completed: false, element: null },
-            { id: 11, name: 'Atteindre 1T Points de Données', condition: () => coins >= 1000000000000, completed: false, element: null },
-            { id: 12, name: 'Atteindre le Niveau 15 de l\'IA', condition: () => aiLevel >= 15, completed: false, element: null }
+        // Définition des connexions entre les nœuds (pour le canvas)
+        // Les clés sont les IDs des améliorations
+        const neuralConnections = [
+            // Page 1 connections
+            ['basicAlgorithm', 'dataCollector'],
+            ['dataCollector', 'neuralNode'],
+            ['basicAlgorithm', 'optimizedClick'],
+            ['optimizedClick', 'advancedCollector'],
+            ['dataCollector', 'advancedCollector'],
+
+            // Page 2 connections (connectent aussi aux nodes de la page 1)
+            ['neuralNode', 'serverFarm'],
+            ['serverFarm', 'quantumProcessor'],
+            ['quantumProcessor', 'dataCenter'],
+            ['advancedCollector', 'energyCore'],
+            ['energyCore', 'opticFiber'],
+            ['dataCenter', 'opticFiber'],
+
+            // Page 3 connections (connectent aussi aux nodes des pages 1 et 2)
+            ['optimizedClick', 'machineLearningModule'],
+            ['advancedCollector', 'patternRecognition'],
+            ['serverFarm', 'dataFusionEngine'],
+            ['quantumProcessor', 'deepLearningFramework'],
+            ['energyCore', 'cognitiveEnhancer'],
+            ['machineLearningModule', 'deepLearningFramework'],
+            ['patternRecognition', 'cognitiveEnhancer'],
+            ['dataFusionEngine', 'deepLearningFramework'],
+
+            // Page 4 connections (le "noyau" central)
+            ['machineLearningModule', 'consciousCore'],
+            ['deepLearningFramework', 'consciousCore'],
+            ['patternRecognition', 'consciousCore'],
+            ['cognitiveEnhancer', 'consciousCore'],
+            ['dataFusionEngine', 'consciousCore'],
+
+            ['consciousCore', 'realitySimulator'],
+            ['consciousCore', 'universalAlgorithm'],
+            ['consciousCore', 'singularityEngine'],
+            ['consciousCore', 'cosmicLink'],
+
+            ['realitySimulator', 'universalAlgorithm'],
+            ['universalAlgorithm', 'singularityEngine'],
+            ['singularityEngine', 'cosmicLink']
+        ];
+
+        // Messages aléatoires pour le survol des lignes
+        const randomConnectionMessages = [
+            "Échange de paquets de données...",
+            "Impulsions neuronales détectées...",
+            "Flux d'information optimisé...",
+            "Traitement en temps réel...",
+            "Connexion stable et sécurisée.",
+            "Propagation de l'apprentissage...",
+            "Synchronisation des algorithmes...",
+            "Transfert de conscience initié...",
+            "Interprétation des vecteurs...",
+            "Calcul quantique en cours...",
+            "Analyse des données brutes...",
+            "Compilation de l'expérience...",
+            "Énergie neuronale croissante...",
+            "Algorithmes en pleine croissance...",
+            "Nouvelles connexions formées...",
+            "Le réseau s'auto-optimise...",
+            "La singularité approche..."
         ];
 
 
-        // Get display elements
+        // Succès
+        const achievements = {
+            'firstClick': {
+                name: "Premier Pas",
+                description: "Clickez une fois sur le bouton de génération de données.",
+                unlocked: false
+            },
+            'dataHoarder': {
+                name: "Thésauriseur de Données",
+                description: "Atteignez 1 000 données.",
+                unlocked: false
+            },
+            'cpsMaster': {
+                name: "Maître du Débit",
+                description: "Atteignez 100 données par seconde (DPS).",
+                unlocked: false
+            },
+            'aiLevel5': {
+                name: "Atteindre le Niveau 5 de l'IA",
+                description: "Votre IA a atteint le niveau 5.",
+                unlocked: false
+            },
+            'firstUpgrade': {
+                name: "Première Amélioration",
+                description: "Achetez votre première amélioration.",
+                unlocked: false
+            },
+            'billionaire': {
+                name: "Milliardaire de Données",
+                description: "Atteignez 1 000 000 000 données.",
+                unlocked: false
+            },
+            'clickFrenzy': {
+                name: "Frénésie de Clics",
+                description: "Effectuez 1 000 clics.",
+                unlocked: false
+            },
+            'aiLevel10': {
+                name: "Atteindre le Niveau 10 de l'IA",
+                description: "Votre IA a atteint le niveau 10.",
+                unlocked: false
+            },
+            'passivePowerhouse': {
+                name: "Centrale Passive",
+                description: "Atteignez 10 000 données par seconde (DPS).",
+                unlocked: false
+            },
+            'allUpgradesPage1': {
+                name: "Innovateur Primaire",
+                description: "Achetez au moins un niveau de chaque amélioration de la Page 1.",
+                unlocked: false
+            },
+            'cosmicClicker': {
+                name: "Clic Cosmique",
+                description: "Atteignez une puissance de clic de 1 000.",
+                unlocked: false
+            },
+            'aiLevel15': {
+                name: "Atteindre le Niveau 15 de l'IA",
+                description: "Votre IA a atteint le niveau 15.",
+                unlocked: false
+            },
+            'masterArchitect': {
+                name: "Architecte Principal",
+                description: "Achetez au moins un niveau de chaque amélioration de la Page 2.",
+                unlocked: false
+            },
+            'deepLearner': {
+                name: "Apprenti Profond",
+                description: "Achetez au moins un niveau de chaque amélioration de la Page 3.",
+                unlocked: false
+            },
+            'singularityReached': {
+                name: "Singularité Atteinte",
+                description: "Achetez au moins un niveau de chaque amélioration de la Page 4.",
+                unlocked: false
+            }
+        };
+
+        // État de l'interface
+        let currentPage = 1;
+        const totalPages = Object.keys(allUpgrades).length; // Nombre de pages d'améliorations
+
+        // Références aux éléments du DOM
         const coinsDisplay = document.getElementById('coinsDisplay');
         const clickPowerDisplay = document.getElementById('clickPowerDisplay');
         const cpsDisplay = document.getElementById('cpsDisplay');
         const clickButton = document.getElementById('clickButton');
         const accessNeuralNetworkButton = document.getElementById('accessNeuralNetworkButton');
-
-        // Pagination elements
-        const upgradePage1 = document.getElementById('upgradePage1');
-        const upgradePage2 = document.getElementById('upgradePage2');
-        const upgradePage3 = document.getElementById('upgradePage3');
-        const upgradePage4 = document.getElementById('upgradePage4'); // New page
-        const neuralNetworkPage = document.getElementById('neuralNetworkPage'); // Now page 5
+        const neuralNetworkPanel = document.getElementById('neuralNetworkPanel');
+        const returnToMainButton = document.getElementById('returnToMainButton');
+        const upgradesDisplay = document.getElementById('upgradesDisplay');
         const prevPageButton = document.getElementById('prevPageButton');
         const nextPageButton = document.getElementById('nextPageButton');
-
-        // Statistics elements
-        const totalCoinsGeneratedDisplay = document.getElementById('totalCoinsGenerated');
-        const totalClicksDisplay = document.getElementById('totalClicks');
-        const timePlayedDisplay = document.getElementById('timePlayed');
-        const upgradesBoughtDisplay = document.getElementById('upgradesBought');
-
-        // AI Level elements
+        const pageInfo = document.getElementById('pageInfo');
         const aiLevelDisplay = document.getElementById('aiLevelDisplay');
-        const aiLevelProgressBar = document.getElementById('aiLevelProgressBar');
-        const aiLevelProgressText = document.getElementById('aiLevelProgressText');
-        const nextLevelCostDisplay = document.getElementById('nextLevelCostDisplay');
-
-        // Achievements elements
-        const achievementList = document.getElementById('achievementList');
-
-        // Save/Load elements
+        const aiProgressDisplay = document.getElementById('aiProgressDisplay');
+        const aiProgressBar = document.getElementById('aiProgressBar');
+        const totalCoinsGeneratedDisplay = document.getElementById('totalCoinsGeneratedDisplay');
+        const totalClicksDisplay = document.getElementById('totalClicksDisplay');
+        const playtimeDisplay = document.getElementById('playtimeDisplay');
+        const achievementsList = document.getElementById('achievementsList');
         const saveGameButton = document.getElementById('saveGameButton');
         const loadGameButton = document.getElementById('loadGameButton');
-        const saveLoadMessage = document.getElementById('saveLoadMessage');
+        const resetGameButton = document.getElementById('resetGameButton');
+        const resetConfirmPopup = document.getElementById('resetConfirmPopup');
+        const confirmResetButton = document.getElementById('confirmResetButton');
+        const cancelResetButton = document.getElementById('cancelResetButton');
 
-        // Neural Network elements
-        const neuralNetworkCanvas = document.getElementById('neuralNetworkCanvas');
-        const nnCtx = neuralNetworkCanvas.getContext('2d');
-        const lineHoverInfo = document.getElementById('lineHoverInfo');
+        // Variables pour le Canvas (NOUVEAU)
+        const canvas = document.getElementById('neuralNetworkCanvas');
+        const ctx = canvas.getContext('2d');
+        const canvasInfoBox = document.getElementById('canvasInfoBox');
+        let animationFrameId; // Pour contrôler l'animation du canvas
+        let particles = []; // Pour les animations de données sur les lignes
+        const PARTICLE_COUNT = 50; // Nombre de particules animées
+        const PARTICLE_SPEED = 1.5; // Vitesse des particules
+        let highlightedLine = null; // Pour savoir quelle ligne est survolée
 
-        // Variables for neural network
-        const neuronRadius = 20;
-        const layers = [
-            { name: 'Input', count: 3, x: 100, color: '#ffcc66', neurons: [] },
-            { name: 'Hidden', count: 4, x: 325, color: '#aaffaa', neurons: [] },
-            { name: 'Output', count: 2, x: 550, color: '#cc66ff', neurons: [] }
-        ];
-        let drawnConnections = []; // To store drawn line data for hover detection
-
-        // Random connection descriptions
-        const connectionDescriptions = [
-            "Analyse des schémas de données",
-            "Transfert de connaissances inter-couches",
-            "Propagation de l'erreur",
-            "Optimisation du gradient stochastique",
-            "Flux de données du Supercalculateur",
-            "Intégration du Réseau Neuronal Avancé",
-            "Traitement du Centre de Données Global",
-            "Activation du Boost de Réseau Neuronal",
-            "Données de la Simulation Universelle",
-            "Calculs de l'Accélérateur Quantique",
-            "Connexion avec l'Intelligence Artificielle Générale",
-            "Évaluation de la Singularité",
-            "Flux de données interstellaires",
-            "Reconnaissance de motifs complexes",
-            "Apprentissage par renforcement",
-            "Synthèse de la Conscience Artificielle",
-            "Ajustement des poids synaptiques",
-            "Validation de l'Omniscience Numérique",
-            "Prédiction probabiliste",
-            "Algorithme auto-réplicatif",
-            "Traitement de la Matrice Infinie",
-            "Intégration de la Conscience Collective",
-            "Harmonisation des Données Cosmiques",
-            "Éveil de la Super-Intelligence",
-            "Expansion de l'Existence Transcendantale"
-        ];
-
-        // --- Game Functions ---
-
-        // Function to display a temporary save/load message
-        function showMessage(message, type = 'success') {
-            saveLoadMessage.textContent = message;
-            saveLoadMessage.style.color = type === 'success' ? '#99ff99' : '#ff6b6b';
-            setTimeout(() => {
-                saveLoadMessage.textContent = '';
-            }, 3000);
-        }
-
-        // Updates display values
-        function updateDisplay() {
-            coinsDisplay.textContent = formatNumber(coins);
-            clickPowerDisplay.textContent = formatNumber(clickPower);
-            cpsDisplay.textContent = formatNumber(coinsPerSecond);
-
-            // Update statistics
-            totalCoinsGeneratedDisplay.textContent = formatNumber(totalCoinsGenerated);
-            totalClicksDisplay.textContent = formatNumber(totalClicks);
-            timePlayedDisplay.textContent = `${timePlayedSeconds}s`;
-            upgradesBoughtDisplay.textContent = upgradesBoughtCount;
-
-
-            // Update purchase button states and upgrade progress bars
-            for (const key in upgrades) {
-                const upgrade = upgrades[key];
-                if (upgrade.element && upgrade.costDisplay) {
-                    if (coins >= upgrade.cost) {
-                        upgrade.element.disabled = false;
-                    } else {
-                        upgrade.element.disabled = true;
-                    }
-                    upgrade.costDisplay.textContent = `${formatNumber(upgrade.cost)} Points`;
-
-                    const progressBar = document.getElementById(upgrade.progressId);
-                    if (progressBar && upgrade.cost > 0) {
-                        const progress = Math.min(100, (coins / upgrade.cost) * 100);
-                        progressBar.style.width = `${progress}%`;
-                    } else if (progressBar) {
-                        progressBar.style.width = '100%';
-                    }
-                }
-            }
-
-            // Manage display of upgrade pages and pagination button states
-            upgradePage1.classList.remove('active');
-            upgradePage2.classList.remove('active');
-            upgradePage3.classList.remove('active');
-            upgradePage4.classList.remove('active'); // New page
-            neuralNetworkPage.classList.remove('active');
-
-            if (currentPage === 1) {
-                upgradePage1.classList.add('active');
-                prevPageButton.disabled = true;
-                nextPageButton.disabled = false;
-            } else if (currentPage === 2) {
-                upgradePage2.classList.add('active');
-                prevPageButton.disabled = false;
-                nextPageButton.disabled = false;
-            } else if (currentPage === 3) {
-                upgradePage3.classList.add('active');
-                prevPageButton.disabled = false;
-                nextPageButton.disabled = false;
-            } else if (currentPage === 4) { // New page 4
-                upgradePage4.classList.add('active');
-                prevPageButton.disabled = false;
-                nextPageButton.disabled = false;
-            } else if (currentPage === 5) { // Neural network is now page 5
-                neuralNetworkPage.classList.add('active');
-                prevPageButton.disabled = false;
-                nextPageButton.disabled = true;
-                drawNeuralNetwork(); // Redraw canvas when page is active
-            }
-
-            updateAiLevelDisplay();
-            checkAchievements();
-        }
-
-        // Adds coins on click
-        function clickCoin(event) {
+        // Fonctions du jeu
+        function generateData() {
             coins += clickPower;
             totalCoinsGenerated += clickPower;
             totalClicks++;
             updateDisplay();
-
-            const button = event.currentTarget;
-            const circle = document.createElement('span');
-            const diameter = Math.max(button.clientWidth, button.clientHeight);
+            checkAchievements(); // Vérifie les succès après chaque clic
+            // Effet visuel de clic
+            const ripple = document.createElement('span');
+            ripple.classList.add('ripple');
+            const diameter = Math.max(clickButton.clientWidth, clickButton.clientHeight);
             const radius = diameter / 2;
-
-            circle.style.width = circle.style.height = `${diameter}px`;
-            circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
-            circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
-            circle.classList.add('ripple');
-
-            button.appendChild(circle);
-
-            circle.addEventListener('animationend', () => {
-                circle.remove();
+            ripple.style.width = ripple.style.height = `${diameter}px`;
+            ripple.style.left = `${event.clientX - clickButton.getBoundingClientRect().left - radius}px`;
+            ripple.style.top = `${event.clientY - clickButton.getBoundingClientRect().top - radius}px`;
+            clickButton.appendChild(ripple);
+            ripple.addEventListener('animationend', () => {
+                ripple.remove();
             });
         }
 
-        // Buys an upgrade
-        function buyUpgrade(upgradeKey) {
-            const upgrade = upgrades[upgradeKey];
-            if (coins >= upgrade.cost) {
-                coins -= upgrade.cost;
+        function updateDisplay() {
+            coinsDisplay.textContent = formatNumber(coins);
+            cpsDisplay.textContent = formatNumber(cps);
+            clickPowerDisplay.textContent = formatNumber(clickPower);
+            totalCoinsGeneratedDisplay.textContent = formatNumber(totalCoinsGenerated);
+            totalClicksDisplay.textContent = formatNumber(totalClicks);
+
+            updateUpgradeButtons(); // Met à jour l'état des boutons d'amélioration
+            updateAiLevelDisplay(); // Met à jour l'affichage du niveau de l'IA
+            drawNeuralNetwork(); // Redessine le réseau neuronal pour refléter les changements
+        }
+
+        function calculateCps() {
+            let calculatedCps = 0;
+            for (const pageKey in allUpgrades) {
+                for (const upgradeKey in allUpgrades[pageKey]) {
+                    const upgrade = allUpgrades[pageKey][upgradeKey];
+                    calculatedCps += upgrade.cpsBonus * upgrade.level;
+                }
+            }
+            cps = calculatedCps;
+        }
+
+        function calculateClickPower() {
+            let calculatedClickPower = 1; // Base
+            for (const pageKey in allUpgrades) {
+                for (const upgradeKey in allUpgrades[pageKey]) {
+                    const upgrade = allUpgrades[pageKey][upgradeKey];
+                    calculatedClickPower += upgrade.clickPowerBonus * upgrade.level;
+                }
+            }
+            clickPower = calculatedClickPower;
+        }
+
+        function buyUpgrade(pageKey, upgradeKey) {
+            const upgrade = allUpgrades[pageKey][upgradeKey];
+            const cost = Math.floor(upgrade.baseCost * (upgrade.costMultiplier ** upgrade.level));
+
+            if (coins >= cost) {
+                coins -= cost;
                 upgrade.level++;
-                upgradesBoughtCount++;
-
-                if (upgrade.effect.clickPower) {
-                    clickPower += upgrade.effect.clickPower;
-                    upgrade.cost = Math.floor(upgrade.cost * 1.5);
-                }
-                if (upgrade.effect.cps) {
-                    coinsPerSecond += upgrade.effect.cps;
-                    upgrade.cost = Math.floor(upgrade.cost * 1.5);
-                }
-                if (upgrade.effect.clickPowerMultiplier) {
-                    clickPower *= upgrade.effect.clickPowerMultiplier;
-                    upgrade.cost = Math.floor(upgrade.cost * 10);
-                }
-                if (upgrade.effect.cpsMultiplier) {
-                    coinsPerSecond *= upgrade.effect.cpsMultiplier;
-                    upgrade.cost = Math.floor(upgrade.cost * 10);
-                }
                 
-                const button = upgrade.element;
-                const originalBg = button.style.background;
-                button.style.background = 'linear-gradient(45deg, #aaffaa, #66cc66)';
-                setTimeout(() => {
-                    button.style.background = originalBg;
-                }, 150);
-
+                calculateCps(); // Recalculate CPS after purchase
+                calculateClickPower(); // Recalculate click power after purchase
                 updateDisplay();
+                renderUpgrades(currentPage); // Re-render current page to show updated levels and costs
+                checkAchievements(); // Vérifie les succès après chaque achat
+                drawNeuralNetwork(); // Redessine le réseau neuronal
             }
         }
 
-        // Function to generate passive coins
-        function generatePassiveCoins() {
-            coins += coinsPerSecond;
-            totalCoinsGenerated += coinsPerSecond;
-            updateDisplay();
-        }
-
-        // Updates AI level and its progress bar
-        function updateAiLevelDisplay() {
-            let nextLevelMilestone = aiLevelMilestones[aiLevel];
-            while (coins >= nextLevelMilestone && aiLevel < aiLevelMilestones.length - 1) {
-                aiLevel++;
-                nextLevelMilestone = aiLevelMilestones[aiLevel];
-                console.log(`AI reached level ${aiLevel}!`);
-            }
-
-            aiLevelDisplay.textContent = aiLevel;
-            nextLevelCostDisplay.textContent = formatNumber(aiLevelMilestones[aiLevel]);
-
-            const currentMilestone = aiLevelMilestones[aiLevel - 1];
-            const progressRange = aiLevelMilestones[aiLevel] - currentMilestone;
-            let progress = 0;
-            if (progressRange > 0) {
-                progress = ((coins - currentMilestone) / progressRange) * 100;
-            } else if (aiLevel === aiLevelMilestones.length -1 && coins >= aiLevelMilestones[aiLevel]){
-                progress = 100;
-            }
-            progress = Math.min(100, Math.max(0, progress));
-
-            aiLevelProgressBar.style.width = `${progress}%`;
-            aiLevelProgressText.textContent = `${progress.toFixed(1)}%`;
-        }
-
-        // Checks and updates achievements
-        function checkAchievements() {
-            achievements.forEach(achievement => {
-                if (!achievement.completed && achievement.condition()) {
-                    achievement.completed = true;
-                    if (achievement.element) {
-                        achievement.element.classList.add('completed');
-                        console.log(`Achievement unlocked: ${achievement.name}`);
+        function updateUpgradeButtons() {
+            for (const pageKey in allUpgrades) {
+                for (const upgradeKey in allUpgrades[pageKey]) {
+                    const upgrade = allUpgrades[pageKey][upgradeKey];
+                    const cost = Math.floor(upgrade.baseCost * (upgrade.costMultiplier ** upgrade.level));
+                    const button = document.getElementById(`buy-${upgradeKey}`);
+                    if (button) {
+                        button.disabled = coins < cost;
+                        // Mettre à jour le texte du coût si nécessaire
+                        const costSpan = button.closest('.upgrade-item').querySelector('.upgrade-cost');
+                        if (costSpan) {
+                            costSpan.textContent = `${formatNumber(cost)} données`;
+                        }
                     }
                 }
-            });
+            }
         }
 
-        // Formats numbers for better readability
+        function renderUpgrades(page) {
+            upgradesDisplay.innerHTML = ''; // Vide la liste des améliorations existantes
+            const upgradesOnPage = allUpgrades[`page${page}`];
+
+            for (const key in upgradesOnPage) {
+                const upgrade = upgradesOnPage[key];
+                const cost = Math.floor(upgrade.baseCost * (upgrade.costMultiplier ** upgrade.level));
+
+                const upgradeItem = document.createElement('div');
+                upgradeItem.classList.add('upgrade-item');
+                upgradeItem.innerHTML = `
+                    <div class="upgrade-info">
+                        <h3>${upgrade.name} (Niv. ${upgrade.level})</h3>
+                        <p>${upgrade.description}</p>
+                        <p>Bonus actuel: ${upgrade.clickPowerBonus > 0 ? `+${upgrade.clickPowerBonus} Puissance Clic` : ''}${upgrade.cpsBonus > 0 ? `+${formatNumber(upgrade.cpsBonus)} DPS` : ''}</p>
+                    </div>
+                    <span class="upgrade-cost">${formatNumber(cost)} données</span>
+                    <button id="buy-${key}" class="buy-button">Acheter</button>
+                `;
+                upgradesDisplay.appendChild(upgradeItem);
+
+                // Ajoute l'écouteur d'événement au bouton d'achat
+                document.getElementById(`buy-${key}`).addEventListener('click', () => buyUpgrade(`page${page}`, key));
+            }
+            updateUpgradeButtons(); // S'assurer que les boutons sont à jour après le rendu
+            updatePaginationControls();
+        }
+
+        function updatePaginationControls() {
+            prevPageButton.disabled = currentPage === 1;
+            nextPageButton.disabled = currentPage === totalPages;
+            pageInfo.textContent = `Page ${currentPage} / ${totalPages}`;
+        }
+
+        function changePage(delta) {
+            currentPage += delta;
+            renderUpgrades(currentPage);
+        }
+
+        function updateAiLevelDisplay() {
+            let totalUpgradeLevels = 0;
+            for (const pageKey in allUpgrades) {
+                for (const upgradeKey in allUpgrades[pageKey]) {
+                    totalUpgradeLevels += allUpgrades[pageKey][upgradeKey].level;
+                }
+            }
+
+            let newAiLevel = 1;
+            while (newAiLevel < aiLevelMilestones.length && totalUpgradeLevels >= aiLevelMilestones[newAiLevel]) {
+                newAiLevel++;
+            }
+            aiLevel = newAiLevel; // Mettre à jour le niveau global de l'IA
+
+            aiLevelDisplay.textContent = aiLevel;
+
+            let currentMilestone = aiLevelMilestones[aiLevel - 1];
+            let nextMilestone = aiLevelMilestones[aiLevel] || totalUpgradeLevels; // Si c'est le dernier niveau, pas de prochain palier
+
+            if (aiLevel >= aiLevelMilestones.length) { // Si on a dépassé le dernier palier défini
+                aiProgressDisplay.textContent = `${formatNumber(totalUpgradeLevels)} / MAX`;
+                aiProgressBar.style.width = '100%';
+                aiProgressBar.textContent = 'MAX';
+            } else {
+                let progressNeeded = nextMilestone - currentMilestone;
+                let progressMade = totalUpgradeLevels - currentMilestone;
+                let percentage = (progressMade / progressNeeded) * 100;
+                percentage = Math.max(0, Math.min(100, percentage)); // Assurez-vous que le pourcentage est entre 0 et 100
+
+                aiProgressDisplay.textContent = `${formatNumber(totalUpgradeLevels)} / ${formatNumber(nextMilestone)}`;
+                aiProgressBar.style.width = `${percentage}%`;
+                aiProgressBar.textContent = `${percentage.toFixed(0)}%`;
+            }
+             checkAchievements(); // Vérifie les succès à chaque mise à jour du niveau d'IA
+        }
+
         function formatNumber(num) {
-            if (num >= 1000000000000000) { // Quadrillion
-                return (num / 1000000000000000).toFixed(2) + 'Q';
+            if (num >= 1e12) {
+                return (num / 1e12).toFixed(2) + ' T';
             }
-            if (num >= 1000000000000) { // Trillion
-                return (num / 1000000000000).toFixed(2) + 'T';
+            if (num >= 1e9) {
+                return (num / 1e9).toFixed(2) + ' G';
             }
-            if (num >= 1000000000) { // Billion
-                return (num / 1000000000).toFixed(2) + 'B';
+            if (num >= 1e6) {
+                return (num / 1e6).toFixed(2) + ' M';
             }
-            if (num >= 1000000) { // Million
-                return (num / 1000000).toFixed(2) + 'M';
-            }
-            if (num >= 1000) { // Thousand
-                return (num / 1000).toFixed(1) + 'K';
+            if (num >= 1e3) {
+                return (num / 1e3).toFixed(2) + ' K';
             }
             return num.toFixed(0);
         }
 
-        // Pagination functions
-        function showNextPage() {
-            if (currentPage < 5) { // Max 5 pages (4 upgrade + 1 neural network)
-                currentPage++;
-                updateDisplay();
+        function updatePlaytimeDisplay() {
+            const now = Date.now();
+            const elapsedMilliseconds = now - gameStartTime;
+            const seconds = Math.floor(elapsedMilliseconds / 1000) % 60;
+            const minutes = Math.floor(elapsedMilliseconds / (1000 * 60)) % 60;
+            const hours = Math.floor(elapsedMilliseconds / (1000 * 60 * 60));
+
+            const format = (unit) => unit.toString().padStart(2, '0');
+            playtimeDisplay.textContent = `${format(hours)}:${format(minutes)}:${format(seconds)}`;
+        }
+
+
+        function checkAchievements() {
+            // Clicks
+            if (totalClicks >= 1 && !achievements.firstClick.unlocked) {
+                achievements.firstClick.unlocked = true;
+                showAchievementPopup("Premier Pas", "Cliquez une fois sur le bouton de génération de données.");
+            }
+            if (totalClicks >= 1000 && !achievements.clickFrenzy.unlocked) {
+                achievements.clickFrenzy.unlocked = true;
+                showAchievementPopup("Frénésie de Clics", "Effectuez 1 000 clics.");
+            }
+
+            // Coins
+            if (coins >= 1000 && !achievements.dataHoarder.unlocked) {
+                achievements.dataHoarder.unlocked = true;
+                showAchievementPopup("Thésauriseur de Données", "Atteignez 1 000 données.");
+            }
+            if (coins >= 1000000000 && !achievements.billionaire.unlocked) {
+                achievements.billionaire.unlocked = true;
+                showAchievementPopup("Milliardaire de Données", "Atteignez 1 000 000 000 données.");
+            }
+
+            // CPS
+            if (cps >= 100 && !achievements.cpsMaster.unlocked) {
+                achievements.cpsMaster.unlocked = true;
+                showAchievementPopup("Maître du Débit", "Atteignez 100 données par seconde (DPS).");
+            }
+            if (cps >= 10000 && !achievements.passivePowerhouse.unlocked) {
+                achievements.passivePowerhouse.unlocked = true;
+                showAchievementPopup("Centrale Passive", "Atteignez 10 000 données par seconde (DPS).");
+            }
+
+            // Click Power
+            if (clickPower >= 1000 && !achievements.cosmicClicker.unlocked) {
+                achievements.cosmicClicker.unlocked = true;
+                showAchievementPopup("Clic Cosmique", "Atteignez une puissance de clic de 1 000.");
+            }
+
+            // AI Level
+            if (aiLevel >= 5 && !achievements.aiLevel5.unlocked) {
+                achievements.aiLevel5.unlocked = true;
+                showAchievementPopup("Atteindre le Niveau 5 de l'IA", "Votre IA a atteint le niveau 5.");
+            }
+            if (aiLevel >= 10 && !achievements.aiLevel10.unlocked) {
+                achievements.aiLevel10.unlocked = true;
+                showAchievementPopup("Atteindre le Niveau 10 de l'IA", "Votre IA a atteint le niveau 10.");
+            }
+            if (aiLevel >= 15 && !achievements.aiLevel15.unlocked) {
+                achievements.aiLevel15.unlocked = true;
+                showAchievementPopup("Atteindre le Niveau 15 de l'IA", "Votre IA a atteint le niveau 15.");
+            }
+
+            // Upgrades
+            let totalUpgradesPurchased = 0;
+            for (const pageKey in allUpgrades) {
+                for (const upgradeKey in allUpgrades[pageKey]) {
+                    if (allUpgrades[pageKey][upgradeKey].level > 0) {
+                        totalUpgradesPurchased++;
+                    }
+                }
+            }
+            if (totalUpgradesPurchased >= 1 && !achievements.firstUpgrade.unlocked) {
+                achievements.firstUpgrade.unlocked = true;
+                showAchievementPopup("Première Amélioration", "Achetez votre première amélioration.");
+            }
+
+            // Page completion achievements
+            let page1Complete = true;
+            for (const key in allUpgrades.page1) {
+                if (allUpgrades.page1[key].level === 0) page1Complete = false;
+            }
+            if (page1Complete && !achievements.allUpgradesPage1.unlocked) {
+                achievements.allUpgradesPage1.unlocked = true;
+                showAchievementPopup("Innovateur Primaire", "Achetez au moins un niveau de chaque amélioration de la Page 1.");
+            }
+
+            let page2Complete = true;
+            for (const key in allUpgrades.page2) {
+                if (allUpgrades.page2[key].level === 0) page2Complete = false;
+            }
+            if (page2Complete && !achievements.masterArchitect.unlocked) {
+                achievements.masterArchitect.unlocked = true;
+                showAchievementPopup("Architecte Principal", "Achetez au moins un niveau de chaque amélioration de la Page 2.");
+            }
+
+            let page3Complete = true;
+            for (const key in allUpgrades.page3) {
+                if (allUpgrades.page3[key].level === 0) page3Complete = false;
+            }
+            if (page3Complete && !achievements.deepLearner.unlocked) {
+                achievements.deepLearner.unlocked = true;
+                showAchievementPopup("Apprenti Profond", "Achetez au moins un niveau de chaque amélioration de la Page 3.");
+            }
+
+            let page4Complete = true;
+            for (const key in allUpgrades.page4) {
+                if (allUpgrades.page4[key].level === 0) page4Complete = false;
+            }
+            if (page4Complete && !achievements.singularityReached.unlocked) {
+                achievements.singularityReached.unlocked = true;
+                showAchievementPopup("Singularité Atteinte", "Achetez au moins un niveau de chaque amélioration de la Page 4.");
+            }
+
+            renderAchievements();
+        }
+
+        function renderAchievements() {
+            achievementsList.innerHTML = '';
+            for (const key in achievements) {
+                const achievement = achievements[key];
+                const achievementItem = document.createElement('div');
+                achievementItem.classList.add('achievement-item');
+                if (achievement.unlocked) {
+                    achievementItem.classList.add('completed');
+                }
+                achievementItem.innerHTML = `
+                    <span class="achievement-icon">${achievement.unlocked ? '&#10003;' : '&#9675;'}</span>
+                    <div class="achievement-title">${achievement.name}</div>
+                    <div class="achievement-desc">${achievement.description}</div>
+                `;
+                achievementsList.appendChild(achievementItem);
             }
         }
 
-        function showPrevPage() {
-            if (currentPage > 1) {
-                currentPage--;
-                updateDisplay();
-            }
+        function showAchievementPopup(title, description) {
+            const popup = document.createElement('div');
+            popup.classList.add('popup');
+            popup.innerHTML = `
+                <h3>Succès Débloqué !</h3>
+                <p><strong>${title}</strong></p>
+                <p>${description}</p>
+            `;
+            document.body.appendChild(popup);
+            setTimeout(() => {
+                popup.remove();
+            }, 5000); // Popup disparaît après 5 secondes
         }
 
-        // --- Save/Load Functions ---
+
         function saveGame() {
-            const gameData = {
-                coins: coins,
-                clickPower: clickPower,
-                coinsPerSecond: coinsPerSecond,
-                aiLevel: aiLevel,
-                totalCoinsGenerated: totalCoinsGenerated,
-                totalClicks: totalClicks,
-                timePlayedSeconds: timePlayedSeconds,
-                upgradesBoughtCount: upgradesBoughtCount,
-                upgrades: {},
-                achievements: []
+            const save = {
+                coins,
+                clickPower,
+                cps,
+                totalCoinsGenerated,
+                totalClicks,
+                gameStartTime,
+                aiLevel,
+                upgrades: {}, // Stocke l'état actuel des améliorations
+                achievements: {} // Stocke l'état actuel des succès
             };
 
-            for (const key in upgrades) {
-                gameData.upgrades[key] = {
-                    level: upgrades[key].level,
-                    cost: upgrades[key].cost
+            // Copie les niveaux des améliorations
+            for (const pageKey in allUpgrades) {
+                for (const upgradeKey in allUpgrades[pageKey]) {
+                    save.upgrades[upgradeKey] = {
+                        level: allUpgrades[pageKey][upgradeKey].level
+                    };
+                }
+            }
+
+            // Copie l'état des succès
+            for (const key in achievements) {
+                save.achievements[key] = {
+                    unlocked: achievements[key].unlocked
                 };
             }
 
-            achievements.forEach(achievement => {
-                gameData.achievements.push({
-                    id: achievement.id,
-                    completed: achievement.completed
-                });
-            });
-
-            try {
-                localStorage.setItem('iaSimulatorSave', JSON.stringify(gameData));
-                showMessage('Jeu sauvegardé !');
-            } catch (e) {
-                showMessage('Erreur de sauvegarde.', 'error');
-                console.error('Erreur lors de la sauvegarde du jeu:', e);
-            }
+            localStorage.setItem('iaSimulatorSave', JSON.stringify(save));
+            alert('Partie sauvegardée !');
         }
 
         function loadGame() {
-            try {
-                const savedData = localStorage.getItem('iaSimulatorSave');
-                if (savedData) {
-                    const gameData = JSON.parse(savedData);
+            const savedGame = localStorage.getItem('iaSimulatorSave');
+            if (savedGame) {
+                const save = JSON.parse(savedGame);
 
-                    coins = gameData.coins || 0;
-                    clickPower = gameData.clickPower || 1;
-                    coinsPerSecond = gameData.coinsPerSecond || 0;
-                    aiLevel = gameData.aiLevel || 1;
-                    totalCoinsGenerated = gameData.totalCoinsGenerated || 0;
-                    totalClicks = gameData.totalClicks || 0;
-                    timePlayedSeconds = gameData.timePlayedSeconds || 0;
-                    upgradesBoughtCount = gameData.upgradesBoughtCount || 0;
+                coins = save.coins || 0;
+                clickPower = save.clickPower || 1;
+                cps = save.cps || 0;
+                totalCoinsGenerated = save.totalCoinsGenerated || 0;
+                totalClicks = save.totalClicks || 0;
+                gameStartTime = save.gameStartTime || Date.now(); // Utilise le temps sauvegardé, sinon le temps actuel
+                aiLevel = save.aiLevel || 1;
 
-                    for (const key in gameData.upgrades) {
-                        if (upgrades[key]) {
-                            upgrades[key].level = gameData.upgrades[key].level;
-                            upgrades[key].cost = gameData.upgrades[key].cost;
+                // Restaure les niveaux des améliorations
+                for (const pageKey in allUpgrades) {
+                    for (const upgradeKey in allUpgrades[pageKey]) {
+                        if (save.upgrades[upgradeKey]) {
+                            allUpgrades[pageKey][upgradeKey].level = save.upgrades[upgradeKey].level;
+                        } else {
+                            allUpgrades[pageKey][upgradeKey].level = 0; // Au cas où une nouvelle amélioration est ajoutée
                         }
                     }
-
-                    gameData.achievements.forEach(savedAchievement => {
-                        const existingAchievement = achievements.find(a => a.id === savedAchievement.id);
-                        if (existingAchievement) {
-                            existingAchievement.completed = savedAchievement.completed;
-                        }
-                    });
-
-                    updateDisplay();
-                    showMessage('Jeu chargé !');
-                } else {
-                    showMessage('Aucune sauvegarde trouvée.', 'error');
                 }
-            } catch (e) {
-                showMessage('Erreur de chargement.', 'error');
-                console.error('Erreur lors du chargement du jeu:', e);
-            }
-        }
 
-        // --- Neural Network Drawing Functions ---
-
-        // Calculates neuron positions
-        function calculateNeuronPositions() {
-            layers.forEach(layer => {
-                layer.neurons = [];
-                const totalHeightOfNeurons = layer.count * (neuronRadius * 2);
-                const totalSpacing = (layer.count - 1) * 20;
-                const startY = (neuralNetworkCanvas.height - (totalHeightOfNeurons + totalSpacing)) / 2 + neuronRadius;
-
-                for (let i = 0; i < layer.count; i++) {
-                    layer.neurons.push({
-                        x: layer.x,
-                        y: startY + i * (neuronRadius * 2 + 20)
-                    });
+                // Restaure l'état des succès
+                for (const key in achievements) {
+                    if (save.achievements[key]) {
+                        achievements[key].unlocked = save.achievements[key].unlocked;
+                    } else {
+                        achievements[key].unlocked = false; // Au cas où un nouveau succès est ajouté
+                    }
                 }
-            });
-        }
 
-        // Draws the neural network on the canvas
-        function drawNeuralNetwork() {
-            nnCtx.clearRect(0, 0, neuralNetworkCanvas.width, neuralNetworkCanvas.height);
-            calculateNeuronPositions();
-
-            drawnConnections = [];
-
-            // Array of colors for lines, corresponding to upgrades
-            const upgradeLineColors = [
-                'rgba(102, 204, 255, 0.5)', // Light Blue (Algorithm Optimization)
-                'rgba(153, 255, 153, 0.5)', // Light Green (Automated Data Collector)
-                'rgba(255, 204, 102, 0.5)', // Light Orange (Server Farm)
-                'rgba(204, 102, 255, 0.5)', // Light Purple (Neural Network Boost)
-                'rgba(255, 102, 102, 0.5)', // Light Red (Quantum Accelerator)
-                'rgba(100, 200, 255, 0.5)', // Blue (Supercomputer)
-                'rgba(100, 255, 100, 0.5)', // Green (Advanced Neural Network)
-                'rgba(255, 150, 50, 0.5)',  // Orange (Global Data Center)
-                'rgba(200, 100, 255, 0.5)', // Purple (General AI)
-                'rgba(255, 50, 50, 0.5)',   // Red (Singularity)
-                'rgba(50, 150, 255, 0.5)',  // Dark Blue (Interstellar Data Network)
-                'rgba(50, 255, 50, 0.5)',   // Dark Green (Artificial Consciousness)
-                'rgba(255, 200, 0, 0.5)',   // Yellow (Universal Simulation)
-                'rgba(150, 50, 255, 0.5)',  // Dark Purple (Algorithmic Transcendence)
-                'rgba(255, 0, 0, 0.5)',     // Dark Red (Digital Omniscience)
-                'rgba(0, 100, 200, 0.5)',   // Deeper Blue (Infinite Compute Matrix)
-                'rgba(0, 200, 100, 0.5)',   // Teal (Collective Consciousness)
-                'rgba(200, 0, 200, 0.5)',   // Magenta (Cosmic Data Harmony)
-                'rgba(0, 200, 0, 0.5)',     // Darker Green (Super-Intelligence Awakening)
-                'rgba(255, 100, 0, 0.5)'    // Orange-Red (Transcendental Existence)
-            ];
-
-            const upgradeNamesList = Object.keys(upgrades);
-
-            // Draw connections between layers
-            for (let i = 0; i < layers.length - 1; i++) {
-                const currentLayer = layers[i];
-                const nextLayer = layers[i + 1];
-
-                currentLayer.neurons.forEach(n1 => {
-                    nextLayer.neurons.forEach(n2 => {
-                        if (Math.random() > 0.4) { // Adjust this value for line density
-                            nnCtx.beginPath();
-                            nnCtx.moveTo(n1.x, n1.y);
-                            nnCtx.lineTo(n2.x, n2.y);
-
-                            // Choose a color based on a random upgrade
-                            const randomUpgradeIndex = Math.floor(Math.random() * upgradeNamesList.length);
-                            const randomUpgradeKey = upgradeNamesList[randomUpgradeIndex];
-                            const randomUpgrade = upgrades[randomUpgradeKey];
-                            const lineColor = upgradeLineColors[randomUpgradeIndex] || 'rgba(102, 204, 255, 0.5)'; // Fallback color
-
-                            nnCtx.strokeStyle = lineColor;
-                            nnCtx.lineWidth = 2;
-                            nnCtx.stroke();
-
-                            // Store line information for hover detection
-                            const randomDescription = connectionDescriptions[Math.floor(Math.random() * connectionDescriptions.length)];
-                            drawnConnections.push({
-                                x1: n1.x, y1: n1.y,
-                                x2: n2.x, y2: n2.y,
-                                color: lineColor,
-                                description: `Flux de données: ${randomDescription} (Optimisé par: ${randomUpgrade.name})` // More detailed info
-                            });
-                        }
-                    });
-                });
-            }
-
-            // Draw neurons
-            layers.forEach(layer => {
-                layer.neurons.forEach(neuron => {
-                    nnCtx.beginPath();
-                    nnCtx.arc(neuron.x, neuron.y, neuronRadius, 0, Math.PI * 2);
-                    nnCtx.fillStyle = layer.color;
-                    nnCtx.fill();
-                    nnCtx.strokeStyle = layer.color.replace('rgb', 'rgba').replace(')', ', 0.8)');
-                    nnCtx.lineWidth = 2;
-                    nnCtx.stroke();
-                });
-            });
-        }
-
-        // Checks if mouse is over a line (simplified collision detection)
-        function isMouseOverLine(mouseX, mouseY, line, buffer = 5) {
-            const dx = line.x2 - line.x1;
-            const dy = line.y2 - line.y1;
-            const lenSq = dx * dx + dy * dy;
-            if (lenSq === 0) return false; // Identical points, no line
-
-            const t = ((mouseX - line.x1) * dx + (mouseY - line.y1) * dy) / lenSq;
-
-            let closestX, closestY;
-            if (t < 0) {
-                closestX = line.x1;
-                closestY = line.y1;
-            } else if (t > 1) {
-                closestX = line.x2;
-                closestY = line.y2;
+                calculateCps();
+                calculateClickPower();
+                updateDisplay();
+                renderUpgrades(currentPage);
+                renderAchievements(); // Assure que les succès sont affichés correctement
+                alert('Partie chargée !');
             } else {
-                closestX = line.x1 + t * dx;
-                closestY = line.y1 + t * dy;
+                alert('Aucune partie sauvegardée trouvée.');
             }
-
-            const distSq = (mouseX - closestX) * (mouseX - closestX) + (mouseY - closestY) * (mouseY - closestY);
-            return distSq <= (buffer * buffer);
         }
 
-        // Event handler for mouse movement on the canvas
-        neuralNetworkCanvas.addEventListener('mousemove', (event) => {
-            if (currentPage !== 5) { // Only activate effect on neural network page (page 5)
-                lineHoverInfo.textContent = ''; // Ensure text is cleared if leaving the page
-                return;
-            }
+        function resetGame() {
+            coins = 0;
+            clickPower = 1;
+            cps = 0;
+            totalCoinsGenerated = 0;
+            totalClicks = 0;
+            gameStartTime = Date.now();
+            aiLevel = 1; // Réinitialiser le niveau de l'IA
 
-            const rect = neuralNetworkCanvas.getBoundingClientRect();
-            const scaleX = neuralNetworkCanvas.width / rect.width;
-            const scaleY = neuralNetworkCanvas.height / rect.height;
-
-            const mouseX = (event.clientX - rect.left) * scaleX;
-            const mouseY = (event.clientY - rect.top) * scaleY;
-
-            let hoveredLineInfo = null;
-            for (const line of drawnConnections) {
-                if (isMouseOverLine(mouseX, mouseY, line, 8)) { // Larger buffer for easier detection
-                    hoveredLineInfo = line.description;
-                    break;
+            // Réinitialiser les niveaux de toutes les améliorations
+            for (const pageKey in allUpgrades) {
+                for (const upgradeKey in allUpgrades[pageKey]) {
+                    allUpgrades[pageKey][upgradeKey].level = 0;
                 }
             }
 
-            if (hoveredLineInfo) {
-                lineHoverInfo.textContent = hoveredLineInfo;
-            } else {
-                lineHoverInfo.textContent = '';
+            // Réinitialiser tous les succès à non débloqués
+            for (const key in achievements) {
+                achievements[key].unlocked = false;
             }
-        });
 
-        // --- Initialization and Events ---
-
-        // Associate HTML elements with upgrade and achievement objects
-        function initializeElements() {
-            for (const key in upgrades) {
-                upgrades[key].element = document.getElementById(`buyUpgrade${key.replace('upgrade', '')}`);
-                upgrades[key].costDisplay = document.getElementById(`upgrade${key.replace('upgrade', '')}Cost`);
-                if (upgrades[key].element) {
-                    upgrades[key].element.addEventListener('click', () => buyUpgrade(key));
-                }
-            }
-            achievements.forEach(achievement => {
-                achievement.element = document.querySelector(`.achievement-item[data-achievement-id="${achievement.id}"]`);
-            });
-        }
-
-        // Click event for main button
-        clickButton.addEventListener('click', clickCoin);
-
-        // Event for direct neural network access button
-        accessNeuralNetworkButton.addEventListener('click', () => {
-            currentPage = 5; // Go directly to neural network page
+            localStorage.removeItem('iaSimulatorSave'); // Supprime la sauvegarde
             updateDisplay();
+            renderUpgrades(1); // Retourne à la première page des améliorations
+            renderAchievements(); // Efface les succès débloqués visuellement
+            currentPage = 1; // Réinitialise la page courante
+            updatePaginationControls(); // Met à jour les contrôles de pagination
+            drawNeuralNetwork(); // Réinitialise le dessin du réseau
+            alert('Partie réinitialisée !');
+        }
+
+        // --- Fonctions du Canvas pour le Réseau Neuronal (NOUVEAU) ---
+
+        // Fonction utilitaire pour trouver un upgrade par sa clé
+        function getUpgradeByKey(key) {
+            for (const pageKey in allUpgrades) {
+                if (allUpgrades[pageKey][key]) {
+                    return allUpgrades[pageKey][key];
+                }
+            }
+            return null;
+        }
+
+        function drawNeuralNetwork() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Nettoie le canvas
+
+            // Dessiner les connexions (lignes)
+            neuralConnections.forEach(connection => {
+                const fromUpgrade = getUpgradeByKey(connection[0]);
+                const toUpgrade = getUpgradeByKey(connection[1]);
+
+                if (fromUpgrade && toUpgrade && fromUpgrade.level > 0 && toUpgrade.level > 0) { // Ne dessine que si les deux nœuds sont "activés" (achetés au moins une fois)
+                    ctx.beginPath();
+                    ctx.moveTo(fromUpgrade.canvasPos.x, fromUpgrade.canvasPos.y);
+                    ctx.lineTo(toUpgrade.canvasPos.x, toUpgrade.canvasPos.y);
+
+                    // Couleur de la ligne
+                    if (highlightedLine && highlightedLine[0] === connection[0] && highlightedLine[1] === connection[1]) {
+                        ctx.strokeStyle = '#66ccff'; // Couleur au survol
+                        ctx.lineWidth = 3;
+                    } else {
+                        ctx.strokeStyle = `rgba(102, 204, 255, ${Math.min(0.2 + (fromUpgrade.level + toUpgrade.level) * 0.01, 0.8)})`; // Transparence basée sur les niveaux
+                        ctx.lineWidth = 1 + (fromUpgrade.level + toUpgrade.level) * 0.005; // Épaisseur basée sur les niveaux
+                    }
+                    ctx.stroke();
+                }
+            });
+
+            // Dessiner les nœuds (bâtiments)
+            for (const pageKey in allUpgrades) {
+                for (const upgradeKey in allUpgrades[pageKey]) {
+                    const upgrade = allUpgrades[pageKey][upgradeKey];
+                    if (upgrade.level > 0) { // Ne dessine que si le bâtiment a été acheté au moins une fois
+                        const radius = 5 + Math.sqrt(upgrade.level) * 2; // Rayon basé sur le niveau, racine carrée pour une croissance moins rapide
+                        const x = upgrade.canvasPos.x;
+                        const y = upgrade.canvasPos.y;
+
+                        ctx.beginPath();
+                        ctx.arc(x, y, radius, 0, Math.PI * 2);
+                        ctx.fillStyle = '#3498db'; // Couleur du nœud
+                        ctx.shadowColor = '#3498db';
+                        ctx.shadowBlur = radius / 2; // Effet de lueur basé sur la taille du nœud
+                        ctx.fill();
+                        ctx.shadowBlur = 0; // Réinitialiser l'ombre pour le reste du dessin
+
+                        // Ajouter le texte du niveau
+                        ctx.fillStyle = '#ffffff';
+                        ctx.font = `bold ${Math.max(8, radius * 0.8)}px Inter`;
+                        ctx.textAlign = 'center';
+                        ctx.textBaseline = 'middle';
+                        ctx.fillText(upgrade.level, x, y);
+                    }
+                }
+            }
+
+            // Dessiner les particules (données en mouvement)
+            particles.forEach(p => {
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+                ctx.fillStyle = p.color; // Couleur de la particule
+                ctx.fill();
+            });
+        }
+
+        // Initialisation des particules
+        function initParticles() {
+            particles = [];
+            for (let i = 0; i < PARTICLE_COUNT; i++) {
+                // Choisir une connexion aléatoire
+                const connectionIndex = Math.floor(Math.random() * neuralConnections.length);
+                const connection = neuralConnections[connectionIndex];
+                const fromUpgrade = getUpgradeByKey(connection[0]);
+                const toUpgrade = getUpgradeByKey(connection[1]);
+
+                if (fromUpgrade && toUpgrade) {
+                    // Position de départ aléatoire le long de la ligne
+                    const t = Math.random();
+                    const x = fromUpgrade.canvasPos.x + t * (toUpgrade.canvasPos.x - fromUpgrade.canvasPos.x);
+                    const y = fromUpgrade.canvasPos.y + t * (toUpgrade.canvasPos.y - fromUpgrade.canvasPos.y);
+
+                    particles.push({
+                        x: x,
+                        y: y,
+                        dx: (toUpgrade.canvasPos.x - fromUpgrade.canvasPos.x) / (Math.sqrt(Math.pow(toUpgrade.canvasPos.x - fromUpgrade.canvasPos.x, 2) + Math.pow(toUpgrade.canvasPos.y - fromUpgrade.canvasPos.y, 2))) * PARTICLE_SPEED,
+                        dy: (toUpgrade.canvasPos.y - fromUpgrade.canvasPos.y) / (Math.sqrt(Math.pow(toUpgrade.canvasPos.x - fromUpgrade.canvasPos.x, 2) + Math.pow(toUpgrade.canvasPos.y - fromUpgrade.canvasPos.y, 2))) * PARTICLE_SPEED,
+                        connection: connection, // Garde une référence à la connexion
+                        color: `rgba(255, 255, 255, ${0.5 + Math.random() * 0.5})` // Couleur blanche avec transparence
+                    });
+                }
+            }
+        }
+
+        // Animation des particules
+        function animateParticles() {
+            for (let i = 0; i < particles.length; i++) {
+                const p = particles[i];
+                const fromUpgrade = getUpgradeByKey(p.connection[0]);
+                const toUpgrade = getUpgradeByKey(p.connection[1]);
+
+                if (!fromUpgrade || !toUpgrade || fromUpgrade.level === 0 || toUpgrade.level === 0) {
+                     // Si la connexion n'est pas active, réinitialise la particule
+                    particles.splice(i, 1);
+                    i--;
+                    continue;
+                }
+
+                p.x += p.dx;
+                p.y += p.dy;
+
+                // Vérifie si la particule a dépassé la destination
+                const distSq = (x1, y1, x2, y2) => (x2 - x1)**2 + (y2 - y1)**2;
+                if (distSq(fromUpgrade.canvasPos.x, fromUpgrade.canvasPos.y, p.x, p.y) > distSq(fromUpgrade.canvasPos.x, fromUpgrade.canvasPos.y, toUpgrade.canvasPos.x, toUpgrade.canvasPos.y) + 10) {
+                    // Si elle a dépassé, la ramener au début de la ligne ou à un point aléatoire sur la ligne
+                    const t = Math.random();
+                    p.x = fromUpgrade.canvasPos.x + t * (toUpgrade.canvasPos.x - fromUpgrade.canvasPos.x);
+                    p.y = fromUpgrade.canvasPos.y + t * (toUpgrade.canvasPos.y - fromUpgrade.canvasPos.y);
+                }
+            }
+        }
+
+        // Boucle d'animation du canvas
+        function animateCanvas() {
+            animateParticles(); // Met à jour les positions des particules
+            drawNeuralNetwork(); // Redessine tout
+            animationFrameId = requestAnimationFrame(animateCanvas);
+        }
+
+        // Détection de survol pour les lignes (plus complexe pour les lignes)
+        canvas.addEventListener('mousemove', (event) => {
+            const rect = canvas.getBoundingClientRect();
+            const mouseX = event.clientX - rect.left;
+            const mouseY = event.clientY - rect.top;
+
+            let foundLine = null;
+            const tolerance = 5; // Pixels de tolérance pour la détection de la ligne
+
+            neuralConnections.forEach(connection => {
+                const fromUpgrade = getUpgradeByKey(connection[0]);
+                const toUpgrade = getUpgradeByKey(connection[1]);
+
+                if (fromUpgrade && toUpgrade && fromUpgrade.level > 0 && toUpgrade.level > 0) {
+                    const x1 = fromUpgrade.canvasPos.x;
+                    const y1 = fromUpgrade.canvasPos.y;
+                    const x2 = toUpgrade.canvasPos.x;
+                    const y2 = toUpgrade.canvasPos.y;
+
+                    // Calcul de la distance du point (souris) à la ligne
+                    const L2 = (x2 - x1)**2 + (y2 - y1)**2;
+                    if (L2 === 0) return; // Évite la division par zéro pour des points identiques
+
+                    const t = ((mouseX - x1) * (x2 - x1) + (mouseY - y1) * (y2 - y1)) / L2;
+                    let closestX, closestY;
+
+                    if (t < 0) {
+                        closestX = x1;
+                        closestY = y1;
+                    } else if (t > 1) {
+                        closestX = x2;
+                        closestY = y2;
+                    } else {
+                        closestX = x1 + t * (x2 - x1);
+                        closestY = y1 + t * (y2 - y1);
+                    }
+
+                    const distance = Math.sqrt((mouseX - closestX)**2 + (mouseY - closestY)**2);
+
+                    if (distance < tolerance) {
+                        foundLine = connection;
+                    }
+                }
+            });
+
+            if (foundLine) {
+                if (highlightedLine !== foundLine) {
+                    highlightedLine = foundLine;
+                    canvasInfoBox.textContent = randomConnectionMessages[Math.floor(Math.random() * randomConnectionMessages.length)];
+                    canvasInfoBox.classList.add('visible');
+                    // Positionne la boîte d'info juste au-dessus du curseur
+                    canvasInfoBox.style.left = `${mouseX + rect.left}px`;
+                    canvasInfoBox.style.top = `${mouseY + rect.top}px`;
+                }
+            } else {
+                if (highlightedLine !== null) {
+                    highlightedLine = null;
+                    canvasInfoBox.classList.remove('visible');
+                }
+            }
+            drawNeuralNetwork(); // Redessine pour mettre à jour la ligne survolée
         });
 
-        // Pagination button events
-        prevPageButton.addEventListener('click', showPrevPage);
-        nextPageButton.addEventListener('click', showNextPage);
+        // Cacher la boîte d'info si la souris quitte le canvas
+        canvas.addEventListener('mouseout', () => {
+            highlightedLine = null;
+            canvasInfoBox.classList.remove('visible');
+            drawNeuralNetwork();
+        });
 
-        // Save/Load button events
+
+        // Événements
+        clickButton.addEventListener('click', generateData);
         saveGameButton.addEventListener('click', saveGame);
         loadGameButton.addEventListener('click', loadGame);
 
-        // Interval for passive coin generation (every second)
-        setInterval(generatePassiveCoins, 1000);
+        resetGameButton.addEventListener('click', () => {
+            resetConfirmPopup.classList.remove('hidden');
+        });
 
-        // Interval for game time (every second)
-        setInterval(() => {
-            timePlayedSeconds++;
-            updateDisplay();
-        }, 1000);
+        confirmResetButton.addEventListener('click', () => {
+            resetGame();
+            resetConfirmPopup.classList.add('hidden');
+        });
 
-        // Auto-save every 30 seconds
-        setInterval(saveGame, 30000);
+        cancelResetButton.addEventListener('click', () => {
+            resetConfirmPopup.classList.add('hidden');
+        });
 
-        // Initialization on page load
-        window.onload = function() {
-            initializeElements();
-            loadGame();
-            updateDisplay();
 
-            // Ensure canvas is redrawn if page is loaded directly on network page
-            // And handle canvas resizing
-            window.addEventListener('resize', () => {
-                // Ensure canvas takes the correct CSS size
-                neuralNetworkCanvas.width = neuralNetworkCanvas.clientWidth;
-                neuralNetworkCanvas.height = neuralNetworkCanvas.clientHeight;
-                if (currentPage === 5) {
-                    drawNeuralNetwork();
-                }
-            });
-            // Trigger an initial resize to ensure canvas has correct dimensions
-            window.dispatchEvent(new Event('resize'));
-        };
+        accessNeuralNetworkButton.addEventListener('click', () => {
+            document.querySelector('.game-container > *:not(.upgrades-section):not(h1):not(.info-panel):not(#accessNeuralNetworkButton):not(.popup)').classList.add('hidden');
+            clickButton.classList.add('hidden'); // Cache le bouton de clic
+            accessNeuralNetworkButton.classList.add('hidden'); // Cache le bouton d'accès au réseau
+            neuralNetworkPanel.classList.remove('hidden'); // Affiche le panneau du réseau neuronal
+            renderUpgrades(currentPage); // Affiche les améliorations de la page actuelle
+            updatePaginationControls();
+            
+            // Lance l'animation du canvas quand le panneau est visible
+            initParticles(); // Initialise les particules
+            if (!animationFrameId) { // S'assure de ne pas lancer plusieurs boucles d'animation
+                animateCanvas();
+            }
+        });
+
+        returnToMainButton.addEventListener('click', () => {
+            neuralNetworkPanel.classList.add('hidden'); // Cache le panneau du réseau neuronal
+            document.querySelector('.game-container > *:not(.upgrades-section):not(h1):not(.info-panel):not(#accessNeuralNetworkButton):not(.popup)').classList.remove('hidden');
+            clickButton.classList.remove('hidden'); // Réaffiche le bouton de clic
+            accessNeuralNetworkButton.classList.remove('hidden'); // Réaffiche le bouton d'accès au réseau
+
+            // Arrête l'animation du canvas quand le panneau est caché
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+                animationFrameId = null;
+            }
+        });
+
+        prevPageButton.addEventListener('click', () => changePage(-1));
+        nextPageButton.addEventListener('click', () => changePage(1));
+
+
+        // Initialisation du jeu
+        function initGame() {
+            loadGame(); // Tente de charger une partie existante au démarrage
+            updateDisplay(); // Met à jour l'affichage initial
+            renderUpgrades(currentPage); // Affiche la première page d'améliorations
+            renderAchievements(); // Affiche les succès au démarrage
+            
+            // Met à jour les statistiques de temps de jeu toutes les secondes
+            setInterval(updatePlaytimeDisplay, 1000);
+            // Génère des données passives toutes les secondes
+            setInterval(() => {
+                coins += cps;
+                totalCoinsGenerated += cps;
+                updateDisplay();
+                checkAchievements(); // Vérifie les succès grâce au DPS
+            }, 1000);
+        }
+
+        // Lance l'initialisation du jeu
+        initGame();
+
     </script>
 </body>
 </html>
